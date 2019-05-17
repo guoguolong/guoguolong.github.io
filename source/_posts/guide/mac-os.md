@@ -5,59 +5,69 @@ categories: [IT, 预备课]
 date: 2019-01-03 10:00:00
 ---
 
+>笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。
+
 ## Mac笔记本电脑
 
 ![](https://img-camp.banyuan.club/prep/mac.jpg?x-oss-process=image/resize,w_500/sharpen,100)
 
-首先你需要有一台Mac笔记本电脑，相信这是你程序员生涯最好的开始。尽管全中国家庭都在使用微软公司的Windows，但你即将工作的组织安装的服务器99%的可能是Linux操作系统。没错，世界上使用最广泛的操作系统竟然是Linux，而和Linux系统最相像的图形操作系统就是苹果公司的Mac OS。需要补充的是：[半圆学社](https://banyuan.club)全力打造了一个“像企业工作一样地去学习”的沉浸式环境，所有的教学都使用Mac和Linux系统进行示范。所以，如果你坚持使用Windows系统，学习效率将大打折扣。
+首先你需要有一台Mac笔记本电脑，相信这是你程序员生涯最好的开始。尽管全中国家庭都在使用微软公司的Windows，但你即将工作的组织安装的服务器99%的可能是Linux操作系统。没错，世界上使用最广泛的操作系统竟然是Linux，而和Linux系统最相像的图形操作系统就是苹果公司的macOS。
 
+macOS起源于Unix FreeBSD，这使得它与开源世界无缝对接，开发和部署C、Pyton、PHP、Java到Linux服务器体验极其平滑。
 
-## 软件工具
+>BTW（广告）：[半圆学社](https://banyuan.club)全力打造了一个“像企业工作一样地去学习”的沉浸式环境，所有的教学都使用Mac和Linux系统进行示范。所以，如果你坚持使用Windows系统，学习效率将大打折扣。
 
-我们坚持在程序员启蒙阶段，安装使用下面这些最基本的工具(以下，对于Windows用户同样有效)：
+## 熟练macOS操作
 
-* PC
-   * [Sublime Text](http://www.sublimetext.com) 纯文本编辑器
-   * [Google Chrome](https://www.google.cn/chrome/)浏览器
-   * [Keka](https://www.keka.io) 支持多种压缩格式解压，特别是RAR文件
-   * [有道云笔记](http://note.youdao.com)
-   * [有道词典](https://dict.youdao.com)
-   * [TypeFu](https://type-fu.com/) 打字软件
+同开车一样，想找到熟练驾驭Mac电脑的感觉，一定有一个走合期间过渡，这需要你保持对未知事物的好奇心，自己多实践、多鼓捣。
 
-* 手机
-   * [有道云笔记](http://note.youdao.com)
-   * [有道词典](https://dict.youdao.com)
-   * [YoMail](http://www.nextechat.com) 邮件客户端 
+这里我给出两个使用Mac习惯的忠告：
 
-## 熟练操作
-
-### 基本技能
-* 掌握Mac下的操作习惯
-* 能熟练通过"访达(Finder)"检索文件和目录
-* 安装软件(官网下载和App Store下载)
-* 搜罗Mac下和Windows同类软件替代品
-
-### 习惯养成
-* 用**触控板**完全替代**鼠标**
+* 不要用**鼠标**，完全用**触控板**替代
 * 能用**快捷键**就不要用**触控板**操作
 
-如果你惰于自己研究，可以购买[《苹果Mac OS X El Capitan 10.11完全手册》](https://item.jd.com/27422394506.html) 获得系统性的帮助。
+通常，一台新的Mac电脑开箱后，对触控板作如下设置使操作更顺滑：
 
-##  触控板和快捷键
-
-⌘（command）- ⌘键更类似于Windows下的CTRL键。  
-⌥（option）  
-⇧（shift）  
-⇪（caps lock）  
-⌃（control）  
-↩（return）  
-
-### 触控板
-Mac电脑入手后，默认的触控板行为并不足够，作如下设置使操作更顺滑：
 * 系统偏好设置->触控板->光标点按，勾选"轻点来点按";
 * 系统偏好设置->辅助功能->鼠标与触控板->触控板选项，勾选"启动拖移"，选择三指拖移
 
-流畅操作：
+然后，你就可以开始熟悉macOS操作习惯了，最少掌握：
+
+* macOS的Launchpad + 桌面 ≈ Windows系统的桌面，macOS支持多个桌面；
+* 能熟练通过"访达(Finder)"检索文件和目录；
+* 创建苹果账号；
+* 安装和卸载软件(官网下载和App Store下载)；
+   * 从App Store(苹果公司官方商店)下载安装；
+   * 从软件官网下载安装；
+* 搜罗macOS下Windows同类软件替代品。
+
+如果你惰于自己研究，可以购买[《苹果Mac OS X El Capitan 10.11完全手册》](https://item.jd.com/27422394506.html) 快速获得系统性的帮助。
+
+## 基础软件工具
+
+Mac电脑开箱后通常就具备了基本日常办公工具。如邮件、日历、Office套件：Pages、Numbers、Keynote（对应MS Office），Keynote是一个极优秀的幻灯片制作软件，应熟练和习惯用它来替代Office PPT。
+
+不过，我们这里不是讨论日常办公的软件，而是专注于准程序员的几个基本工具：
+
+   * [Sublime Text](http://www.sublimetext.com) 纯文本编辑器
+   * [Google Chrome](https://www.google.cn/chrome/)浏览器
+   * [Keka](https://www.keka.io) 支持多种压缩格式解压，特别是RAR文件
+   * [有道云笔记](http://note.youdao.com) 记读书笔记
+   * [有道词典](https://dict.youdao.com) 拯救你的英语
+   * [Type Fu](https://type-fu.com/) 很酷的打字软件
+
+为了学习能多管齐下，手机也应安装：
+
+   * [有道云笔记](http://note.youdao.com)
+   * [有道词典](https://dict.youdao.com)  
+   * [YoMail](http://www.nextechat.com) 邮件客户端 ，苹果手机 [Arimail](http://airmailapp.com/) 体验更佳
+
+这些软件如此基础和重要么？不必问，后面文章的逻辑会解释。如果你已经迫不及待想试试各种macOS应用，去[小众软件](https://www.appinn.com/)卡翻翻——它是一个不错的macOS软件基地。
+
+## 触控板和快捷键(Cheat sheet)
+
+### 触控板
+
 * 单指轻敲：同鼠标左键
 * 双指轻敲：同鼠标右键
 * 双指推动：滑动窗口（上下左右均可滑动）
@@ -67,7 +77,18 @@ Mac电脑入手后，默认的触控板行为并不足够，作如下设置使�
 * 四指推拉：平铺所有应用窗口->层叠显示所有应用窗口->仅显示当前应用窗口
 * 五指扩大/缩小：显示桌面->显示当前应用窗口->显示显示应用（从大到小）
 
-### 全局快捷键
+### 快捷键
+
+先熟悉下每个符号对应的键盘的含义：
+
+⌘（command）- ⌘键更类似于Windows下的CTRL键。  
+⌥（option）  
+⇧（shift）  
+⇪（caps lock）  
+⌃（control）  
+↩（return）  
+
+#### 全局快捷键
 * 长按关机键：强制关机
 * ⌘ + W：关闭当前窗口
 * ⌘ + Q：退出当前应用（注：访达不可退出）
@@ -78,7 +99,7 @@ Mac电脑入手后，默认的触控板行为并不足够，作如下设置使�
 * ⌘ + 空格：打开Spotlight应用，输入应用程序名，快速打开
 * ⌘ + ,：打开当前应用的偏好设置
 
-### 访达(Finder)
+#### 访达(Finder)
 
 * 轻敲触控板选中文件或目录
 * ⌘ + ⌥ + 空格：打开访达
@@ -98,7 +119,7 @@ Mac电脑入手后，默认的触控板行为并不足够，作如下设置使�
 
 应总是开启"显示文件扩展名"，打开Finder的"偏好设置"->"高级"，勾选“显示所有文件扩展名”。
 
-### Sublime Text
+#### Sublime Text
 
 **文件操作**  
 * ⌘ + N：新建文件
@@ -122,4 +143,4 @@ Mac电脑入手后，默认的触控板行为并不足够，作如下设置使�
 * ⌘ + V：把剪贴板的内容粘贴到光标位置
 * ⌘ + Z：误操作按此组合键回退
 
-**天下武功、唯快不破。熟练使用触控板和快捷键，让我看到一个机智的你！**
+**熟练使用触控板和快捷键，让我看到一个机智的你！**
