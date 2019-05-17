@@ -43,7 +43,7 @@ macOS起源于Unix FreeBSD，这使得它与开源世界无缝对接，开发和
 
 如果你惰于自己研究，可以购买[《苹果Mac OS X El Capitan 10.11完全手册》](https://item.jd.com/27422394506.html) 快速获得系统性的帮助。
 
-## 基础软件工具
+## 安装基础软件工具
 
 Mac电脑开箱后通常就具备了基本日常办公工具。如邮件、日历、Office套件：Pages、Numbers、Keynote（对应MS Office），Keynote是一个极优秀的幻灯片制作软件，应熟练和习惯用它来替代Office PPT。
 
