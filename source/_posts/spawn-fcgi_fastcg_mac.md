@@ -2,6 +2,7 @@
 title: Mac OS下用Nginx/spawn-fcgi/fastcgi写C的Web应用
 categories: [IT, C]
 tags: [C, Web]
+date: 2019-04-03 10:00:00
 ---
 
 ## I. 编写一个网页（在命令行运行）
