@@ -43,12 +43,12 @@ macOS起源于Unix FreeBSD，这使得它与开源世界无缝对接，开发和
 
 ## 安装基础工具
 
-Mac电脑开箱后通常就具备了基本日常办公工具。如邮件、日历、Office套件：Pages、Numbers、Keynote（对应MS Office），Keynote是一个极优秀的幻灯片制作软件，应熟练和习惯用它来替代Office PPT。
+Mac电脑开箱后通常就具备了基本日常办公工具。如邮件、日历、Office套件：Pages、Numbers、Keynote（对应MS Office），Keynote是一个极优秀的幻灯片制作软件，应熟练和习惯用它来替代Office PPT。中国用户特有的微信、QQ则需要自己安装。
 
-不过，我们这里不是讨论日常办公的软件，而是专注于准程序员的几个基本工具：
+不过，我们这里不是讨论日常办公的软件，而是专注于准程序员必备的几个基本工具：
 
    * [Sublime Text](http://www.sublimetext.com) 纯文本编辑器
-   * [Google Chrome](https://www.google.cn/chrome/)浏览器
+   * [Google Chrome](https://www.google.cn/chrome/) 网页浏览器
    * [有道云笔记](http://note.youdao.com) 记读书笔记
    * [有道词典](https://dict.youdao.com) 拯救你的英语
    * [Type Fu](https://type-fu.com/) 很酷的打字软件
@@ -61,7 +61,7 @@ Mac电脑开箱后通常就具备了基本日常办公工具。如邮件、日�
 
 这些软件如此基础和重要么？不必问，后面文章的逻辑会解释。如果你已经迫不及待想试用各种macOS应用，去[小众软件](https://www.appinn.com/)翻一翻，里面有不错的软件推荐。
 
-## 触控板和快捷键(Cheat sheet)
+## 触控板和快捷键(Cheat Sheet)
 
 触控板和键盘好比你手中的方向盘，要熟练到什么程度都不为过。
 
