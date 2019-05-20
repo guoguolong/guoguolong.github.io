@@ -26,7 +26,7 @@ date: 2019-01-16 10:00:00
 ```
 ls /
 ```
-输入结果如下：
+输出结果如下：
 ```
 Applications  Users  dev  Library  Volumes  etc  net  tmp  Network  bin  home  opt  sbin  usr  System  cores  private  server  var
 ```
