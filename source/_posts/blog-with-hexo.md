@@ -39,7 +39,7 @@ GitHub Pages官方采用了[Jekyll](https://jekyllrb.com/)博客框架，编译�
 * 把博客内容翻译了 html 文件；
 * 用git把html发布到名字为 lixiaobai.github.io 的 GitHub 仓库的 master 分支（这一步需要做对应的设置）
 
-## 博客的管理
+## 博客管理最佳实践
 
 ### 源文件和编译文件
 
