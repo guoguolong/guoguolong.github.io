@@ -1,6 +1,6 @@
 ---
 title: 用Hexo + Github搭建个人博客
-tags: [blog, hexo, git, submodule]
+tags: [blog, hexo]
 categories: [IT, hexo]
 ---
 
