@@ -56,7 +56,7 @@ hexo 默认主题不合我意，还是：[Next](https://theme-next.org/) 漂亮�
 git submodule add https://github.com/lixiaobai/hexo-theme-next.git themes/next
 ```
 
->下次在其他地方clone项目要使用 git submodule update --init --recursive 更新， 更多关于submodule看[这里](/git/submodule.html)
+>下次在其他地方clone项目要使用 git submodule update --init --recursive 更新， 更多关于submodule看[这里](/2019/05/18/git/submodule/)
 
 
 
