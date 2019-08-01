@@ -15,7 +15,7 @@ date: 2019-04-03 10:00:00
 
 ``` c
 // 假设代码放到/projects/cgi目录
-#include "fcgi_stdio.h" //要写在行首（fcgi_stdio.h里定义的printf与c里的冲突），且用冒号（引用路径而非全局）
+#include <fcgi_stdio.h> //要写在行首（fcgi_stdio.h里定义的printf与c里的冲突），且用冒号（引用路径而非全局）
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -33,9 +33,9 @@ int main(void) {
 ```
 编译源代码：
 
->gcc /projects/cgi/boot.c -o /projects/cgi/boot.cgi -lfcg
+>gcc /projects/cgi/boot.c -o /projects/cgi/boot.cgi -lfcgi
 
-注：如果找不到libfcgi.so，编译时要加上-L /usr/local/fastcgikit/lib/参数，指定依赖库所在的目录。
+注：gcc参数-L、-i未指定，表明brew安装fcgi时已经加入到搜索目录/usr/local/lib 和 /user/local/include目录
 
 命令行运行：
 
