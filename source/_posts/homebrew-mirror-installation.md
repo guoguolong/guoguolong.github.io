@@ -90,8 +90,14 @@ git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 ### 替换 cask 软件仓库（提供 macOS 应用和大型二进制文件）
 
 ```
-cd "$(brew --repo)"/Library/Taps/caskroom/homebrew-cask
+cd "$(brew --repo)"/Library/Taps/homebrew/homebrew-cask
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
+```
+重置为官方地址：
+
+```
+cd "$(brew --repo)"/Library/Taps/homebrew/homebrew-cask
+git remote set-url origin https://github.com/Homebrew/homebrew-cask
 ```
 
 ### 替换 Bottles 源（Homebrew 预编译二进制软件包）
