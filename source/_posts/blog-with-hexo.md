@@ -1,6 +1,7 @@
 ---
 title: 用Hexo + Github搭建个人博客
 tags: [blog, hexo]
+date: 2019-03-01 12:11:09
 categories: [IT, hexo]
 ---
 

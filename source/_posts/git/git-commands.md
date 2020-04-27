@@ -1,6 +1,7 @@
 ---
 title: 只要使用git都会用到的命令
 tags: [git]
+date: 2019-07-10 21:10:00
 categories: [IT]
 ---
 

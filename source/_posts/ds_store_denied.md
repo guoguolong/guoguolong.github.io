@@ -1,6 +1,7 @@
 ---
 title: 禁止.DS_store生成
 tags: [mac]
+date: 2019-05-03 10:11:09
 categories: [IT]
 ---
 

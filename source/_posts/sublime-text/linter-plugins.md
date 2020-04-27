@@ -1,6 +1,7 @@
 ---
 title: macOS下Sublime Text3的Linter插件配置
 tags: [SublimeText]
+date: 2019-06-04 13:07:09
 categories: [IT]
 ---
 

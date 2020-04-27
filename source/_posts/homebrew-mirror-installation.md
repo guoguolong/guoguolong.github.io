@@ -1,6 +1,7 @@
 ---
 title: macOS下HomeBrew国内镜像安装
 tags: [mac, homebrew]
+date: 2019-04-17 04:00:12
 categories: [IT, homebrew]
 ---
 

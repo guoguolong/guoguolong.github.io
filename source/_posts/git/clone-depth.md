@@ -1,6 +1,7 @@
 ---
 title: git clone的depth的妙用
 tags: [git, depth]
+date: 2019-06-13 20:00:00
 categories: [IT]
 ---
 

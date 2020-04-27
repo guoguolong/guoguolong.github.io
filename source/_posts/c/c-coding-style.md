@@ -1,6 +1,7 @@
 ---
 title: Google C Style和Sublime Text的C插件
 tags: [C]
+date: 2019-06-22 15:00:09
 categories: [IT, C]
 ---
 

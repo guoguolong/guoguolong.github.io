@@ -1,6 +1,7 @@
 ---
 title: Git workflow suggestion for Web Application
 tags: [git]
+date: 2020-04-27 14:00:00
 categories: [IT]
 ---
 

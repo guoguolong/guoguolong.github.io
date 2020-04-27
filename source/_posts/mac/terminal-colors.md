@@ -1,6 +1,7 @@
 ---
 title: Mac自带的终端ls命令下文件与文件夹颜色单一的调整
 tags: [mac]
+date: 2018-11-037 14:00:12
 categories: [IT]
 ---
 
