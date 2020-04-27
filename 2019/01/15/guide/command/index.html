@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  这是本系列文章唯一有专业技术要求的一篇，但是，没那么遥不可及。计算机好比一个图书馆，无论作为计算机专业人员还是业余爱好者，都要学会如何存取计算机这个大图书馆。 简单说，Mac电脑用户必须熟练使用 访达(Finder) 来存取计算机里的数据">
+<meta name="keywords" content="入行,预备课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员入行之素养(五)：一生万物、万物归一(命令行与计算机资料)">
+<meta property="og:url" content="http://guoguolong.tech/2019/01/15/guide/command/index.html">
+<meta property="og:site_name" content="Allen Guo">
+<meta property="og:description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  这是本系列文章唯一有专业技术要求的一篇，但是，没那么遥不可及。计算机好比一个图书馆，无论作为计算机专业人员还是业余爱好者，都要学会如何存取计算机这个大图书馆。 简单说，Mac电脑用户必须熟练使用 访达(Finder) 来存取计算机里的数据">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/finder.png?x-oss-process=image/resize,w_750/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/terminal-logo.png?x-oss-process=image/resize,w_40/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/terminal-main.png?x-oss-process=image/resize,w_750/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/root-dir.png?x-oss-process=image/resize,w_750/sharpen,100">
+<meta property="og:updated_time" content="2020-04-27T10:05:08.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员入行之素养(五)：一生万物、万物归一(命令行与计算机资料)">
+<meta name="twitter:description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  这是本系列文章唯一有专业技术要求的一篇，但是，没那么遥不可及。计算机好比一个图书馆，无论作为计算机专业人员还是业余爱好者，都要学会如何存取计算机这个大图书馆。 简单说，Mac电脑用户必须熟练使用 访达(Finder) 来存取计算机里的数据">
+<meta name="twitter:image" content="https://img-camp.banyuan.club/prep/finder.png?x-oss-process=image/resize,w_750/sharpen,100">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://guoguolong.tech/2019/01/15/guide/command/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>程序员入行之素养(五)：一生万物、万物归一(命令行与计算机资料) | Allen Guo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Allen Guo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Keep it sharp</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-it•互联网">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/IT" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>IT•互联网</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-生活•随想">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/Life" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>生活•随想</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/15/guide/command/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">程序员入行之素养(五)：一生万物、万物归一(命令行与计算机资料)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-15 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-15T10:00:00+08:00">2019-01-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。</p>
+</blockquote>
+<p>这是本系列文章唯一有<strong>专业技术</strong>要求的一篇，但是，没那么遥不可及。计算机好比一个图书馆，无论作为计算机专业人员还是业余爱好者，都要学会如何存取计算机这个大图书馆。</p>
+<p>简单说，Mac电脑用户必须熟练使用 <strong>访达(Finder)</strong> 来存取计算机里的数据资料（与 <strong><em>访达</em></strong> 对应的Windows软件叫 <strong><em>文件管理器</em></strong>）。<br><img src="https://img-camp.banyuan.club/prep/finder.png?x-oss-process=image/resize,w_750/sharpen,100" alt="Finder"></p>
+<h2 id="文件和目录概念"><a href="#文件和目录概念" class="headerlink" title="文件和目录概念"></a>文件和目录概念</h2><p>电脑里所有的资料都存在一个名字叫<strong>硬盘</strong>的硬件设备里，断电后数据不会丢失。计算机采用了图书馆类似的概念：把数据组织成 <strong>文件(File)</strong> 和 <strong>目录(Directory)</strong> 放在硬盘里。</p>
+<p><strong>文件之于目录，犹如图书之于书架</strong>。和图书馆有所不同的是，计算机里文件和目录是一个二维的树型结构，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[/]</span><br><span class="line"> |_[samples]</span><br><span class="line">      |_ [计算机专业]</span><br><span class="line">      |    |_ 编译原理.pdf</span><br><span class="line">      |    |_ 核心Java卷I.pdf</span><br><span class="line">      |    |_ C语言程序设计.pdf</span><br><span class="line">      |_ [教育理念]</span><br><span class="line">      |    |_ 半圆文化.txt</span><br><span class="line">      |_ [文科]</span><br><span class="line">           |_ [历史教育]</span><br><span class="line">                |_ 全球通史.docx</span><br><span class="line">                |_ 中国古代简史.pdf</span><br><span class="line">                |_ 中国近代史1840-1949.txt</span><br><span class="line">                |_ 中国史纲要.html</span><br></pre></td></tr></table></figure>
+<p>上图用 <strong>[]</strong> 扩起来的条目是目录，即资料所在的位置，其他条目则是文件，是资料本身。</p>
+<p>下面是几个重要的有关目录的概念：</p>
+<ul>
+<li><p>根目录(Root)<br>名字为 <strong>/</strong> 的目录是计算机的 <strong>根目录</strong>，就像图书馆的大门口，一切资料的位置都要循着 <strong>/</strong> 目录去定位和检索。比如，可以说：<strong>“编译原理.pdf”</strong> 这份资料位于 <strong>/samples/计算机专业</strong> 目录；<strong>“全球通史.docx”</strong> 的位于 <strong>/samples/文科/历史教育</strong> 目录。</p>
+</li>
+<li><p>子目录(Sub)<br>相比之下，<strong>“文科”</strong> 、<strong>“计算机专业”</strong> 是 <strong>/</strong> 和 <strong>samples</strong> 的子目录（Sub），<strong>“历史教育”</strong> 是 <strong>“文科”</strong> 的子目录。</p>
+</li>
+<li><p>父目录(Parent)<br>反之，<strong>“文科”</strong> 是 <strong>“历史教育”</strong> 的父目录，<strong>/</strong> 是所有目录的父目录。</p>
+</li>
+</ul>
+<p>文件 <strong>“全球通史.docx”</strong> 存在于 <strong>/samples/文科/历史教育</strong> 目录下，我们把 <strong>/文科/历史教育/全球通史.docx</strong> 称为该文件的全路径（Path）。描述文件或目录的路径时，每个条目之间用 <strong>/</strong> 分隔。</p>
+<h2 id="命令行工具"><a href="#命令行工具" class="headerlink" title="命令行工具"></a>命令行工具</h2><p>对于专业选手，除了要熟练用 <strong>访达</strong> 存取文件和目录，还必须学会使用 <strong>命令行</strong> 完成同样的操作。</p>
+<p>相信大家都很熟悉在Windows系统里点击QQ、Word图标启动程序；启动程序的另一种方式是：通过输入相应的程序名(约定的文字)，敲击回车键来启动程序的运行，我们称之为命令行操作。</p>
+<p><img src="https://img-camp.banyuan.club/prep/terminal-logo.png?x-oss-process=image/resize,w_40/sharpen,100" alt="Terminal"> Mac系统使用 <strong>终端(Terminal)</strong> 进行 <strong>命令行</strong> 操作，点按桌面相应图标即可启动<strong>终端</strong>，也可以通过 Spotlight(还记得快捷键<strong>⌘ + 空格</strong>吗？) 输入文字 <strong><em>terminal</em></strong> 后敲击回车键快速打开<strong>终端</strong>。</p>
+<p><img src="https://img-camp.banyuan.club/prep/terminal-main.png?x-oss-process=image/resize,w_750/sharpen,100" alt="Terminal"></p>
+<h2 id="例子准备"><a href="#例子准备" class="headerlink" title="例子准备"></a>例子准备</h2><p>为方便实验，我们精心准备了一个例子，目录和文件名主要用英文表示，具体结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/samples/</span><br><span class="line">├── [basic]</span><br><span class="line">│     ├── algorithm.pdf</span><br><span class="line">│     ├── compiling.pdf</span><br><span class="line">│     └── [math]</span><br><span class="line">│           └── linear.algebra.pdf</span><br><span class="line">├── [culture]</span><br><span class="line">│     └── banyuan.txt</span><br><span class="line">├── [important]</span><br><span class="line">├── [langs]</span><br><span class="line">│     ├── c.pdf</span><br><span class="line">│     ├── css.pdf</span><br><span class="line">│     ├── [java]</span><br><span class="line">│     │     ├── core-java-i.pdf</span><br><span class="line">│     │     ├── core-java-ii.pdf</span><br><span class="line">│     │     └── java8-guide.pdf</span><br><span class="line">│     ├── python.pdf</span><br><span class="line">│     └── web.html</span><br><span class="line">├── [os]</span><br><span class="line">│     ├── linux-guide.jpg</span><br><span class="line">│     ├── linux-introduction.docx</span><br><span class="line">│     ├── mac os.html</span><br><span class="line">│     └── [unix]</span><br><span class="line">│           ├── unix-intro.pdf</span><br><span class="line">│           └── what-is-bash.pdf</span><br><span class="line">├── [web]</span><br><span class="line">│     ├── apache.pdf</span><br><span class="line">│     ├── [build]</span><br><span class="line">│     │     └── webpack4.jpg</span><br><span class="line">│     ├── [framework]</span><br><span class="line">│     │     ├── expressjs.pdf</span><br><span class="line">│     │     └── springio.pdf</span><br><span class="line">│     ├── nginx.pdf</span><br><span class="line">│     └── [orm]</span><br><span class="line">└── [历史]</span><br><span class="line">       └── 中国古代简史.pdf</span><br></pre></td></tr></table></figure></p>
+<p>请点击 <a href="https://img-camp.banyuan.club/prep/samples.zip" target="_blank" rel="noopener">samples.zip</a> 下载并解压缩，并将其拖动到 <strong>/</strong> 目录（根目录）下。</p>
+<p>为完成该操作，首先需要使用 <strong>访达(Finder)</strong> 定位到 <strong>/</strong> 目录，打开 <strong>访达(Finder)</strong>，窗口左侧有一个 <strong>Macintosh HD</strong>，点击后，右侧主窗口显示的即是 <strong>/</strong> 目录，如下图所示：</p>
+<p><img src="https://img-camp.banyuan.club/prep/root-dir.png?x-oss-process=image/resize,w_750/sharpen,100" alt></p>
+<blockquote>
+<p>注：如果 <strong>Finder</strong> 窗口左侧没有看到 <strong>Macintosh HD</strong> 怎么办？  </p>
+<p>打开 <strong>Finder</strong> 菜单：前往-&gt;电脑（或者按快捷键 ⌘ + ⇧ + C），拖动右侧窗口的 <strong>Macintosh HD</strong> 到左侧窗口 <strong>位置</strong> 下面。</p>
+</blockquote>
+<p>其次，你要知道你下载的 samples.zip 位于<strong>下载</strong> 目录， <strong>访达(Finder)</strong> 窗口左侧有个 <strong>下载</strong>，点击后在右侧主窗口看到samples.zip，将解压缩的 samples 目录复制到 <strong>/</strong> ，复制时系统弹出对话框，要求输入Mac用户的密码（这个在你安装Mac系统时，系统分配给你的用户和密码），输入密码后，例子准备工作就做好了。</p>
+<p>接下来我们就以前面图示的文件和目录为例，一起实践吧！</p>
+<blockquote>
+<p>一个悖论是：<strong>我只有Windows没有Mac电脑，所以无法实践命令行操作；不实践命令行操作我无法通过入学面试；不入学半圆我就没有Mac电脑（入学半圆就送全新Mac电脑）。</strong> 即便如此，你仍然要读完接下来的内容，在最后，我们列出了Windows下命令行操作的对应方法和规则，祝你能从Mac的操作教程中汲取灵感，更好地在Windows下展开实践。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/入行/" rel="tag"># 入行</a>
+          
+            <a href="/tags/预备课/" rel="tag"># 预备课</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/12/guide/how-to-note/" rel="next" title="程序员入行之素养(四)：好记性不如烂笔头(怎样记读书笔记)">
+                <i class="fa fa-chevron-left"></i> 程序员入行之素养(四)：好记性不如烂笔头(怎样记读书笔记)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/15/guide/command-u/" rel="prev" title="程序员入行之素养(五)：一生万物、万物归一(命令行“更新”电脑资料)">
+                程序员入行之素养(五)：一生万物、万物归一(命令行“更新”电脑资料) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Guoguolong</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/guoguolong" title="GitHub &rarr; https://github.com/guoguolong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:elon.guo@gmail.com" title="E-Mail &rarr; mailto:elon.guo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件和目录概念"><span class="nav-number">1.</span> <span class="nav-text">文件和目录概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行工具"><span class="nav-number">2.</span> <span class="nav-text">命令行工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子准备"><span class="nav-number">3.</span> <span class="nav-text">例子准备</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guoguolong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

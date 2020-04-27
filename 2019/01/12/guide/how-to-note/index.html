@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  ○ 需要记读书笔记吗？○ 电子的还是纸质？○ 易于创作、易于传播！○ 在哪里创作？   能用纯文本写的知识，绝不用Word来写！   这句话的涵义在于：知识应易于创作，纯文本就是用键盘码出来的字。一个轻巧的文本编辑器就可以书写；如果用Wo">
+<meta name="keywords" content="入行,预备课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员入行之素养(四)：好记性不如烂笔头(怎样记读书笔记)">
+<meta property="og:url" content="http://guoguolong.tech/2019/01/12/guide/how-to-note/index.html">
+<meta property="og:site_name" content="Allen Guo">
+<meta property="og:description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  ○ 需要记读书笔记吗？○ 电子的还是纸质？○ 易于创作、易于传播！○ 在哪里创作？   能用纯文本写的知识，绝不用Word来写！   这句话的涵义在于：知识应易于创作，纯文本就是用键盘码出来的字。一个轻巧的文本编辑器就可以书写；如果用Wo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/markdown-sample.png?x-oss-process=image/resize,w_800/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/youdao-note-logo.png?x-oss-process=image/resize,w_20/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/youdao-note-sample.png?x-oss-process=image/resize,w_800/sharpen,100">
+<meta property="og:updated_time" content="2020-04-27T10:05:08.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员入行之素养(四)：好记性不如烂笔头(怎样记读书笔记)">
+<meta name="twitter:description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  ○ 需要记读书笔记吗？○ 电子的还是纸质？○ 易于创作、易于传播！○ 在哪里创作？   能用纯文本写的知识，绝不用Word来写！   这句话的涵义在于：知识应易于创作，纯文本就是用键盘码出来的字。一个轻巧的文本编辑器就可以书写；如果用Wo">
+<meta name="twitter:image" content="https://img-camp.banyuan.club/prep/markdown-sample.png?x-oss-process=image/resize,w_800/sharpen,100">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://guoguolong.tech/2019/01/12/guide/how-to-note/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>程序员入行之素养(四)：好记性不如烂笔头(怎样记读书笔记) | Allen Guo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Allen Guo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Keep it sharp</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-it•互联网">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/IT" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>IT•互联网</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-生活•随想">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/Life" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>生活•随想</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/12/guide/how-to-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">程序员入行之素养(四)：好记性不如烂笔头(怎样记读书笔记)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-12 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-12T10:00:00+08:00">2019-01-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。</p>
+</blockquote>
+<p>○ 需要记读书笔记吗？<br>○ 电子的还是纸质？<br>○ 易于创作、易于传播！<br>○ 在哪里创作？  </p>
+<p><strong>能用纯文本写的知识，绝不用Word来写！</strong>  </p>
+<p>这句话的涵义在于：<strong>知识应易于创作</strong>，纯文本就是用键盘码出来的字。一个轻巧的文本编辑器就可以书写；如果用Word，你很可能纠缠于各种文本格式调整，甚至心中暗暗得意呢。但此时你已经偏离<strong>写作</strong>很远了；</p>
+<p><strong>能用HTML(网页)传播的知识，绝不用其他途径！</strong>  </p>
+<p>这句话的涵义在于：<strong>知识应易于传播</strong>， 每台个人电脑和每部现代手机都内置了浏览器软件，只要获知网页的URL地址就可以访问网页里的内容了。反观用Word书写的文档传播给他人时，阅读者还必须下载并安装Office之类的软件才能查看Word。</p>
+<p>HTML文件通过浏览器阅读，也是用纯文本书写，接近完美。</p>
+<h2 id="初识Markdown"><a href="#初识Markdown" class="headerlink" title="初识Markdown"></a>初识Markdown</h2><p>但对于作为<strong>读书笔记</strong>的记录方法，HTML仍然不够简洁，否则软件专业培训就不会有一门课叫”网页制作“了。结论是：<strong>使用<a href="https://daringfireball.net/projects/markdown/syntax" target="_blank" rel="noopener">Markdown</a>书写笔记文档，写完后编译成网页（HTML）供自己或分享给他人阅读。</strong></p>
+<p>下面让我们快速浏览一下Markdown的书写格式：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 初探HTML</span></span><br><span class="line">顾名思义，HTML是一种标记语言。其标记以应用于文档内容（例如文本）的元素为其存在形式。</span><br><span class="line"></span><br><span class="line"><span class="section">## 初探CSS</span></span><br><span class="line">CSS（层叠样式表）用来规定HTML文档的呈现形式（外观和格式编排）。</span><br><span class="line"></span><br><span class="line"><span class="section">### 定义和应用样式</span></span><br><span class="line">CSS样式由一条或多条以分号隔开的样式声明组成。每条声明包含着一个CSS属性和该属性的值，二者以冒号分隔。下面是一条简单的CSS样式。</span><br><span class="line"></span><br><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">background-color:grey; color:white;</span></span><br><span class="line"><span class="code">```</span></span><br><span class="line"></span><br><span class="line"><span class="section">### CSS中的颜色</span></span><br><span class="line">颜色在网页中的作用非常重要。在CSS中设置颜色有好几种方法。</span><br><span class="line"></span><br><span class="line"><span class="strong">**CSS颜色选编**</span>  </span><br><span class="line"></span><br><span class="line">|颜色名称|十六进制|十进制|</span><br><span class="line">|---|---|---|</span><br><span class="line">|black|#000000|0,0,0|</span><br><span class="line">|silver|#C0C0C0|192,192,192|</span><br><span class="line">|gray|#808080|128,128,128|</span><br><span class="line"></span><br><span class="line"><span class="section">## 初探JavaScript</span></span><br><span class="line">JavaScript过得挺不容易。出生不顺，青春期更满是苦涩。直到近年来，它才开始树立起一种实用的灵活语言的形象。JavaScript能做的事很多，尽管它还称不上完善，但也值得认真对待。</span><br><span class="line"><span class="quote">&gt; **Atwood定律**: "任何可以使用JavaScript来编写的应用,并最终也会由JavaScript编写。"</span></span><br></pre></td></tr></table></figure>
+<p>通过Markdown编译工具翻译成HTML后如下显示：</p>
+<p><img src="https://img-camp.banyuan.club/prep/markdown-sample.png?x-oss-process=image/resize,w_800/sharpen,100" alt></p>
+<p>Markdown格式极其收敛，只用了有限的几个语法标注，就可以做出上图这种简洁的书写效果，让作者专注于内容创作本身。任何Markdown无能为力的格式，都可以直接混合书写HTML（HTML无所不能）。不过，你应该总是把格式美化工作留到创作结束的时候。</p>
+<h2 id="云笔记工具"><a href="#云笔记工具" class="headerlink" title="云笔记工具"></a>云笔记工具</h2><p><a href="http://note.youdao.com" target="_blank" rel="noopener"><img src="https://img-camp.banyuan.club/prep/youdao-note-logo.png?x-oss-process=image/resize,w_20/sharpen,100" alt></a> <strong>有道云笔记</strong> 可能不是最好的Markdown编辑器，但是它是最好的支持Markdown格式编辑的云笔记软件。</p>
+<p><img src="https://img-camp.banyuan.club/prep/youdao-note-sample.png?x-oss-process=image/resize,w_800/sharpen,100" alt>  </p>
+<p>有道云笔记有可视化添加Markdown语法的操作按钮，有即时网页预览功能。另外，之所以称为“云”笔记，是因为可以随时随地通过手机、电脑、网页等多种方式编辑和分享笔记内容。你应该总是在移动设备上安装有道云笔记。</p>
+<p>学习未知领域的知识，特别是对于系统性的知识，学习过程中有大量的实践总结和归纳、还有存疑处，都应记录到云笔记软件里，常常整理回顾，直到知识已经深深烙印在脑海里，把那些毫无价值的笔记内容再删除掉，使笔记内容总是有效。</p>
+<p>根据个人喜好你也可以选择<a href="https://evernote.com" target="_blank" rel="noopener">大象笔记</a>、<a href="http://www.wiz.cn/" target="_blank" rel="noopener">为知笔记</a>等其他云笔记软件，甚至直接注册登陆 jianshu.com 网站(支持Markdown)，将愿意公开的内容发布到网站上分享给大众。</p>
+<h2 id="学习Markdown"><a href="#学习Markdown" class="headerlink" title="学习Markdown"></a>学习Markdown</h2><h3 id="Markdown是什么"><a href="#Markdown是什么" class="headerlink" title="Markdown是什么"></a>Markdown是什么</h3><ul>
+<li>Markdown是Aaron Swartz 跟<a href="https://daringfireball.net/" target="_blank" rel="noopener">John Gruber</a>共同设计的排版语言。</li>
+<li>Markdown的目标是实现「易读易写」。</li>
+<li>Markdown 语法的目标是：成为一种适用于网络的书写语言。</li>
+<li>Markdown 不是想要取代 HTML，</li>
+<li>Markdown 的理念是，能让文档更容易读、写和随意改。</li>
+<li>HTML 是一种发布的格式，Markdown 是一种书写的格式。</li>
+</ul>
+<h3 id="Markdown扩展"><a href="#Markdown扩展" class="headerlink" title="Markdown扩展"></a>Markdown扩展</h3><p>Markdown由<a href="https://daringfireball.net/" target="_blank" rel="noopener">John Gruber</a>发布在<a href="https://daringfireball.net" target="_blank" rel="noopener">https://daringfireball.net</a> ，也可以浏览<a href="http://www.markdown.cn/#" target="_blank" rel="noopener">Markdown中文网</a> 快速了解Markdown的所有基本语法。</p>
+<p>Markdown基础功能尚不完备，因此衍生了一系列版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），Markdown增强版中比较有名的有<a href="https://michelf.ca/projects/php-markdown/extra/" target="_blank" rel="noopener">Markdown Extra</a>、<a href="https://fletcherpenney.net/multimarkdown/" target="_blank" rel="noopener">MultiMarkdown</a>、 <a href="https://github.com/bhollis/maruku/blob/master/docs/markdown_syntax.md" target="_blank" rel="noopener">Maruku</a>等。这些衍生版本要么基于工具如，如<a href="http://pandoc.org" target="_blank" rel="noopener">Pandoc</a>、<a href="http://note.youdao.com" target="_blank" rel="noopener">有道云笔记</a>(前文提及)；要么基于网站，如<a href="https://github.com" target="_blank" rel="noopener">GitHub</a>和<a href="https://www.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a>。它们在语法上基本兼容，但增强的语法使渲染效果更生动。</p>
+<h3 id="好用的Markdown工具"><a href="#好用的Markdown工具" class="headerlink" title="好用的Markdown工具"></a>好用的Markdown工具</h3><p><strong>有道云笔记</strong> 可以用Markdown格式记录笔记。其实编辑和编译Markdown的工具很多，<a href="https://macdown.uranusjr.com/" target="_blank" rel="noopener">Macdown</a> 值得一试；对于Windows用户，推荐安装 <a href="https://typora.io/" target="_blank" rel="noopener">typora</a>。如果你坚持用Sublime Text，插件Markdown Preview小巧轻便。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/入行/" rel="tag"># 入行</a>
+          
+            <a href="/tags/预备课/" rel="tag"># 预备课</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/08/guide/how-to-search/" rel="next" title="程序员入行之素养(三)：寻根问题、追本溯源(如何检索专业知识)">
+                <i class="fa fa-chevron-left"></i> 程序员入行之素养(三)：寻根问题、追本溯源(如何检索专业知识)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/15/guide/command/" rel="prev" title="程序员入行之素养(五)：一生万物、万物归一(命令行与计算机资料)">
+                程序员入行之素养(五)：一生万物、万物归一(命令行与计算机资料) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Guoguolong</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/guoguolong" title="GitHub &rarr; https://github.com/guoguolong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:elon.guo@gmail.com" title="E-Mail &rarr; mailto:elon.guo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初识Markdown"><span class="nav-number">1.</span> <span class="nav-text">初识Markdown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#云笔记工具"><span class="nav-number">2.</span> <span class="nav-text">云笔记工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习Markdown"><span class="nav-number">3.</span> <span class="nav-text">学习Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown是什么"><span class="nav-number">3.1.</span> <span class="nav-text">Markdown是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown扩展"><span class="nav-number">3.2.</span> <span class="nav-text">Markdown扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好用的Markdown工具"><span class="nav-number">3.3.</span> <span class="nav-text">好用的Markdown工具</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guoguolong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

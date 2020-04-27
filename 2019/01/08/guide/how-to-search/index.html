@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  如果你有传统文献检索的经验，互联网时代，不过就是把检索的方法搬到计算机上，由于这正是计算机的擅长的领域，往往检索到的相关结果极其庞杂。因此，如何辨别这些结果的好坏、找出最有价值部分，才是我们本文要阐述的。  总是尝试用搜索引擎搜索未知的知">
+<meta name="keywords" content="入行,预备课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员入行之素养(三)：寻根问题、追本溯源(如何检索专业知识)">
+<meta property="og:url" content="http://guoguolong.tech/2019/01/08/guide/how-to-search/index.html">
+<meta property="og:site_name" content="Allen Guo">
+<meta property="og:description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  如果你有传统文献检索的经验，互联网时代，不过就是把检索的方法搬到计算机上，由于这正是计算机的擅长的领域，往往检索到的相关结果极其庞杂。因此，如何辨别这些结果的好坏、找出最有价值部分，才是我们本文要阐述的。  总是尝试用搜索引擎搜索未知的知">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/how-to-search.png?x-oss-process=image/resize,w_600/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/what-is-docbook-search.png?x-oss-process=image/resize,w_500/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/docbook-search.png?x-oss-process=image/resize,w_500/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/docbook.org.png?x-oss-process=image/resize,w_500/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/xmlmind.png?x-oss-process=image/resize,w_500/sharpen,100">
+<meta property="og:updated_time" content="2020-04-27T10:05:08.715Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员入行之素养(三)：寻根问题、追本溯源(如何检索专业知识)">
+<meta name="twitter:description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  如果你有传统文献检索的经验，互联网时代，不过就是把检索的方法搬到计算机上，由于这正是计算机的擅长的领域，往往检索到的相关结果极其庞杂。因此，如何辨别这些结果的好坏、找出最有价值部分，才是我们本文要阐述的。  总是尝试用搜索引擎搜索未知的知">
+<meta name="twitter:image" content="https://img-camp.banyuan.club/prep/how-to-search.png?x-oss-process=image/resize,w_600/sharpen,100">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://guoguolong.tech/2019/01/08/guide/how-to-search/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>程序员入行之素养(三)：寻根问题、追本溯源(如何检索专业知识) | Allen Guo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Allen Guo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Keep it sharp</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-it•互联网">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/IT" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>IT•互联网</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-生活•随想">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/Life" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>生活•随想</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/08/guide/how-to-search/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">程序员入行之素养(三)：寻根问题、追本溯源(如何检索专业知识)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-08 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-08T10:00:00+08:00">2019-01-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。</p>
+</blockquote>
+<p>如果你有传统文献检索的经验，互联网时代，不过就是把检索的方法搬到计算机上，由于这正是计算机的擅长的领域，往往检索到的相关结果极其庞杂。因此，如何辨别这些结果的好坏、找出最有价值部分，才是我们本文要阐述的。</p>
+<p><img src="https://img-camp.banyuan.club/prep/how-to-search.png?x-oss-process=image/resize,w_600/sharpen,100" alt></p>
+<p>总是尝试用搜索引擎搜索未知的知识，是一个必须养成的习惯。上图表示搜索结果从上到下权重依次降低，应尽可能选择权威的信息进行使用。</p>
+<p>假设导师刚分配一个你未知计算机领域的课题：“同学们，去了解下DocBook，下个月我们将使用它来书写论文”，想想你会怎么做？看下面的学习过程：</p>
+<h2 id="尝试搜索"><a href="#尝试搜索" class="headerlink" title="尝试搜索"></a>尝试搜索</h2><p>如果你对DocBook一无所知，我想直觉的反应就是打开搜索引擎网站，输入：”<strong>什么是DocBook</strong>“，如果你正在使用百度，以下就是搜索结果：</p>
+<p><img src="https://img-camp.banyuan.club/prep/what-is-docbook-search.png?x-oss-process=image/resize,w_500/sharpen,100" alt></p>
+<p>结果总是优先呈现自家的”百度百科”（如果采用科学上网，wikipedia.org 上DocBook的词条可能更被优先展现）。不论哪个<strong>百科</strong>，你很快获得一种印象：<strong>百科</strong>是个宝库，对世界上很多词条给以正规的、通俗的阐述，百科大致相当于一次文献，参考价值自然不错。 </p>
+<p>继续向下翻阅搜索结果，如果某个相关标题看起来更易懂，当然也可以点进去看看。但是，这往往需要你仔细甄别目标网站的知名度、作者的水准，有可能作者对问题的表述很业余甚至是错的，耽误了大家宝贵的学习时间，甚至误入歧途。</p>
+<p><a href="https://zhihu.com" target="_blank" rel="noopener">知乎</a>是一个更专业的问答网站，你可以直接进入该网站搜索docbook相关词条或提问，往往能得到更专业回答。</p>
+<h2 id="追本溯源"><a href="#追本溯源" class="headerlink" title="追本溯源"></a>追本溯源</h2><p>计算机技术起源西方，大多用英语阐述，不妨去掉关键字里的中文，直接搜索”DocBook”试试，百度搜索结果如下：</p>
+<p><img src="https://img-camp.banyuan.club/prep/docbook-search.png?x-oss-process=image/resize,w_500/sharpen,100" alt></p>
+<p>如果关键字涉及某种专业技术，通常第一个搜索结果都是这个技术的官方网站。观察上图显示的第一个搜索结果，对应网址是：<a href="https://docbook.org" target="_blank" rel="noopener">https://docbook.org</a> ，从名字上看，貌似该知识的发源。不过打开之后，第一感觉是卖书的，貌似不太符合一般”官方”的格调…</p>
+<p><img src="https://img-camp.banyuan.club/prep/docbook.org.png?x-oss-process=image/resize,w_500/sharpen,100" alt></p>
+<p>仔细阅读官网页面上不的文字（上图所示），里面有句话：</p>
+<blockquote>
+<p>The definitive guide is the official documentation for DocBook.<br>…<br>but it is still <a href="https://docbook.org/tdg/" target="_blank" rel="noopener">available online</a>.<br><strong>《DocBook权威指南》是DocBook的官方文档 …  你仍然可以从 <a href="https://docbook.org/tdg/" target="_blank" rel="noopener">https://docbook.org/tdg/</a> 获取…</strong></p>
+</blockquote>
+<p>误会误会，是李逵不是李鬼。打开在线文档，名副其实的一本书的内容。看来这个知识可能需要系统地去学习啊。不过当务之急是先快速地了解基础概念才对，点击”What is DocBook”链接，里面又说：”DocBook由<a href="http://www.oasis-open.org/" target="_blank" rel="noopener">OASIS</a>维护…”。 进入OSASIS网站，里面清楚地阐述DocBook的发展历史，演进方法，当前最新标准是5.1，打开最新标准文档，里面一句话总结了概念：</p>
+<blockquote>
+<p>DocBook is a general purpose [XML] schema particularly well suited to books and papers about computer hardware and software (though it is by no means limited to these applications).<br><strong>DocBook是一个XML Schema，特别适合于书写计算机领域的书和论文（但不限于此）。</strong></p>
+</blockquote>
+<p>连环新名词在计算机专业知识学习中是常见的，如果不幸你还不了解XML，那将不得不开展另一个学习线索，这里就此打住。不过到这里，终于还是理解了DocBook基本概念：<strong>它原来是用来写书的。</strong></p>
+<h2 id="小试牛刀"><a href="#小试牛刀" class="headerlink" title="小试牛刀"></a>小试牛刀</h2><p>”Word可以写书、网页也可以写书，DocBook为什么被推崇？“ 带着问题去学习，很自然地就会去深入文档了。一旦理解其理念后（原来DocBook格式的文档更容易交换和传播啊），一定是跃跃欲试、摩拳擦掌了。</p>
+<p>官网Wiki页面，里面罗列了庞杂的书写工具（软件），挨个试着下载、安额和使用它们，直到找到最顺手的，赶快来试一试吧。下图是我用XMLmind XML Editor制作的一本书的样例：</p>
+<p><img src="https://img-camp.banyuan.club/prep/xmlmind.png?x-oss-process=image/resize,w_500/sharpen,100" alt></p>
+<p>严肃地学习一个计算机专业知识、特别是系统性的知识，”追本溯源”是必须养成的思维习惯：”找到知识的起源——原文出处、官方网站，读第一手资料”。前文提到的<strong>百科</strong>、<strong>知乎</strong>等主要是中文阐述、通俗简短，其全面性、权威性往往不足，只能作为一个辅助手段，用来快速了解问题的概貌。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/入行/" rel="tag"># 入行</a>
+          
+            <a href="/tags/预备课/" rel="tag"># 预备课</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/05/guide/type-faster/" rel="next" title="程序员入行之素养(二)：天下武功、唯快不破(成为一名优秀的打字员)">
+                <i class="fa fa-chevron-left"></i> 程序员入行之素养(二)：天下武功、唯快不破(成为一名优秀的打字员)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/12/guide/how-to-note/" rel="prev" title="程序员入行之素养(四)：好记性不如烂笔头(怎样记读书笔记)">
+                程序员入行之素养(四)：好记性不如烂笔头(怎样记读书笔记) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Guoguolong</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/guoguolong" title="GitHub &rarr; https://github.com/guoguolong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:elon.guo@gmail.com" title="E-Mail &rarr; mailto:elon.guo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试搜索"><span class="nav-number">1.</span> <span class="nav-text">尝试搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#追本溯源"><span class="nav-number">2.</span> <span class="nav-text">追本溯源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小试牛刀"><span class="nav-number">3.</span> <span class="nav-text">小试牛刀</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guoguolong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

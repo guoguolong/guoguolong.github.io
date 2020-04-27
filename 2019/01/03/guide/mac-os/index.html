@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  Mac笔记本电脑 首先你需要有一台Mac笔记本电脑，相信这是你程序员生涯最好的开始。尽管全中国家庭都在使用微软公司的Windows，但你即将工作的组织安装的服务器99%的可能是Linux操作系统。没错，世界上使用最广泛的操作系统竟然是Li">
+<meta name="keywords" content="入行,预备课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员入行之素养(一)：工欲善其事、必先利其器(Mac Style)">
+<meta property="og:url" content="http://guoguolong.tech/2019/01/03/guide/mac-os/index.html">
+<meta property="og:site_name" content="Allen Guo">
+<meta property="og:description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  Mac笔记本电脑 首先你需要有一台Mac笔记本电脑，相信这是你程序员生涯最好的开始。尽管全中国家庭都在使用微软公司的Windows，但你即将工作的组织安装的服务器99%的可能是Linux操作系统。没错，世界上使用最广泛的操作系统竟然是Li">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/mac.jpg?x-oss-process=image/resize,w_500/sharpen,100">
+<meta property="og:updated_time" content="2020-04-27T10:05:08.715Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员入行之素养(一)：工欲善其事、必先利其器(Mac Style)">
+<meta name="twitter:description" content="笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。  Mac笔记本电脑 首先你需要有一台Mac笔记本电脑，相信这是你程序员生涯最好的开始。尽管全中国家庭都在使用微软公司的Windows，但你即将工作的组织安装的服务器99%的可能是Linux操作系统。没错，世界上使用最广泛的操作系统竟然是Li">
+<meta name="twitter:image" content="https://img-camp.banyuan.club/prep/mac.jpg?x-oss-process=image/resize,w_500/sharpen,100">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://guoguolong.tech/2019/01/03/guide/mac-os/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>程序员入行之素养(一)：工欲善其事、必先利其器(Mac Style) | Allen Guo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Allen Guo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Keep it sharp</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-it•互联网">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/IT" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>IT•互联网</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-生活•随想">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/Life" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>生活•随想</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/03/guide/mac-os/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">程序员入行之素养(一)：工欲善其事、必先利其器(Mac Style)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-03 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-03T10:00:00+08:00">2019-01-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>笔者根据个人二十年从业经验，总结了在开始编程之前，应系统性地准备一系列工作，形成了“程序员入行必备之素养”系列。谨此，献给有志于从事软件开发职业的浩浩青年。</p>
+</blockquote>
+<h2 id="Mac笔记本电脑"><a href="#Mac笔记本电脑" class="headerlink" title="Mac笔记本电脑"></a>Mac笔记本电脑</h2><p><img src="https://img-camp.banyuan.club/prep/mac.jpg?x-oss-process=image/resize,w_500/sharpen,100" alt></p>
+<p>首先你需要有一台Mac笔记本电脑，相信这是你程序员生涯最好的开始。尽管全中国家庭都在使用微软公司的Windows，但你即将工作的组织安装的服务器99%的可能是Linux操作系统。没错，世界上使用最广泛的操作系统竟然是Linux，而和Linux系统最相像的图形操作系统就是苹果公司的macOS。</p>
+<p>macOS起源于Unix FreeBSD，这使得它与开源世界无缝对接，开发和部署C、Pyton、PHP、Java到Linux服务器体验极其平滑。</p>
+<h2 id="熟练macOS操作"><a href="#熟练macOS操作" class="headerlink" title="熟练macOS操作"></a>熟练macOS操作</h2><p>同开车一样，想找到熟练驾驭Mac电脑的感觉，一定有一个走合期间过渡，这需要你保持对未知事物的好奇心，自己多实践、多鼓捣。</p>
+<p>这里我给出两个使用Mac习惯的忠告：</p>
+<ul>
+<li>不要用<strong>鼠标</strong>，完全用<strong>触控板</strong>替代</li>
+<li>能用<strong>快捷键</strong>就不要用<strong>触控板</strong>操作</li>
+</ul>
+<p>通常，一台新的Mac电脑开箱后，对触控板作如下设置使操作更顺滑：</p>
+<ul>
+<li>系统偏好设置-&gt;触控板-&gt;光标点按，勾选”轻点来点按”;</li>
+<li>系统偏好设置-&gt;辅助功能-&gt;鼠标与触控板-&gt;触控板选项，勾选”启动拖移”，选择三指拖移</li>
+</ul>
+<p>然后，你就可以开始熟悉macOS操作习惯了，最少掌握：</p>
+<ul>
+<li>macOS的Launchpad + 桌面 ≈ Windows系统的桌面，macOS支持多个桌面；</li>
+<li>能熟练通过”访达(Finder)”检索文件和目录；</li>
+<li>创建苹果账号；</li>
+<li>安装和卸载软件(官网下载和App Store下载)；<ul>
+<li>从App Store(苹果公司官方商店)下载安装；</li>
+<li>从软件官网下载安装；</li>
+</ul>
+</li>
+<li>搜罗macOS下Windows同类软件替代品。</li>
+</ul>
+<p>如果你惰于自己研究，可以购买<a href="https://item.jd.com/27422394506.html" target="_blank" rel="noopener">《苹果Mac OS X El Capitan 10.11完全手册》</a> ，也许能加速系统性地了解macOS。</p>
+<h2 id="安装基础工具"><a href="#安装基础工具" class="headerlink" title="安装基础工具"></a>安装基础工具</h2><p>Mac电脑开箱后通常就具备了基本日常办公工具。如邮件、日历、Office套件：Pages、Numbers、Keynote（对应MS Office），Keynote是一个极优秀的幻灯片制作软件，应熟练和习惯用它来替代Office PPT。中国用户特有的微信、QQ则需要自己安装。</p>
+<p>不过，我们这里不是讨论日常办公的软件，而是专注于准程序员必备的几个基本工具：</p>
+<ul>
+<li><a href="http://www.sublimetext.com" target="_blank" rel="noopener">Sublime Text</a> 纯文本编辑器</li>
+<li><a href="https://www.google.cn/chrome/" target="_blank" rel="noopener">Google Chrome</a> 网页浏览器</li>
+<li><a href="http://note.youdao.com" target="_blank" rel="noopener">有道云笔记</a> 记读书笔记</li>
+<li><a href="https://dict.youdao.com" target="_blank" rel="noopener">有道词典</a> 拯救你的英语</li>
+<li><a href="https://type-fu.com/" target="_blank" rel="noopener">Type Fu</a> 很酷的打字软件</li>
+</ul>
+<p>为了学习能多管齐下，手机也应安装：</p>
+<ul>
+<li><a href="http://note.youdao.com" target="_blank" rel="noopener">有道云笔记</a></li>
+<li><a href="https://dict.youdao.com" target="_blank" rel="noopener">有道词典</a>  </li>
+<li><a href="http://www.nextechat.com" target="_blank" rel="noopener">YoMail</a> 邮件客户端 ，苹果手机 <a href="http://airmailapp.com/" target="_blank" rel="noopener">Arimail</a> 体验更佳</li>
+</ul>
+<p>这些软件如此基础和重要么？不必问，后面文章的逻辑会解释。如果你已经迫不及待想试用各种macOS应用，去<a href="https://www.appinn.com/" target="_blank" rel="noopener">小众软件</a>翻一翻，里面有不错的软件推荐。</p>
+<h2 id="触控板和快捷键-Cheat-Sheet"><a href="#触控板和快捷键-Cheat-Sheet" class="headerlink" title="触控板和快捷键(Cheat Sheet)"></a>触控板和快捷键(Cheat Sheet)</h2><p>触控板和键盘好比你手中的方向盘，要熟练到什么程度都不为过。</p>
+<h3 id="触控板"><a href="#触控板" class="headerlink" title="触控板"></a>触控板</h3><ul>
+<li>单指轻敲：同鼠标左键</li>
+<li>双指轻敲：同鼠标右键</li>
+<li>双指推动：滑动窗口（上下左右均可滑动）</li>
+<li>三指拖动：<ul>
+<li>如果光标位于文本区域，从当前光标位置选中到三只拖动的位置；</li>
+<li>如果光标在窗口BAR处，则拖动窗口（反复拖动，松手再拖动）</li>
+</ul>
+</li>
+<li>四指推拉：平铺所有应用窗口-&gt;层叠显示所有应用窗口-&gt;仅显示当前应用窗口</li>
+<li>五指扩大/缩小：显示桌面-&gt;显示当前应用窗口-&gt;显示显示应用（从大到小）</li>
+</ul>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>先熟悉下每个符号对应的键盘的表示：</p>
+<p>⌘（command）- ⌘键更类似于Windows下的CTRL键。<br>⌥（option）<br>⇧（shift）<br>⇪（caps lock）<br>⌃（control）<br>↩（return）  </p>
+<h4 id="全局快捷键"><a href="#全局快捷键" class="headerlink" title="全局快捷键"></a>全局快捷键</h4><ul>
+<li>长按关机键：强制关机</li>
+<li>⌘ + W：关闭当前窗口</li>
+<li>⌘ + Q：退出当前应用（注：访达不可退出）</li>
+<li>⌘ + TAB：切换打开的应用</li>
+<li>⌃ + 空格：切换输入法</li>
+<li>⌘ + ⇧ + 3： 全屏截图</li>
+<li>⌘ + ⇧ + 4： 选择截图</li>
+<li>⌘ + 空格：打开Spotlight应用，输入应用程序名，快速打开</li>
+<li>⌘ + ,：打开当前应用的偏好设置</li>
+</ul>
+<h4 id="访达-Finder-快捷键"><a href="#访达-Finder-快捷键" class="headerlink" title="访达(Finder)快捷键"></a>访达(Finder)快捷键</h4><ul>
+<li>轻敲触控板选中文件或目录</li>
+<li>⌘ + ⌥ + 空格：打开访达</li>
+<li>⌘ + ↓：选中目录，按该组合进入目录；选中文件，按该组合用默认关联程序打开该文件</li>
+<li>⌘ + ↑：在当前位置，按该组合回到上级目录</li>
+<li>↩：选中文件或目录，按回车键，修改名字，修改完，再次按回车键，完成修改</li>
+<li>⇧ + ↑/↓：选中一个文件或目录，按住⇧，再不断按上下箭头选择多个文件或目录</li>
+<li>触控板三指拖拉：在访达的某个位置（目录）中，在空白处使用触控板三指拖拉可以选中文件或子目录</li>
+<li>⌘ + A：选中当前窗口所有文本</li>
+<li>⌘ + C：选中文件和目录复制到到剪贴板</li>
+<li>⌘ + V：进入目标位置(目录)，把剪贴板的内容复制进去</li>
+<li>⌘ + ⌥ + V：进入目标位置(目录)，把剪贴板的内容剪切过去（同移动）</li>
+<li>⌘ + ⇧ + N：创建一个新的目录</li>
+<li>⌘ + DELETE：选中文件或目录，按该组合删除之</li>
+<li>⌘ + ⇧ + G：直接输入目标文件和目录的绝对路径，按回车键直接进入</li>
+<li>⌘ + Z：不小心误操作（比如：不小心删除文件到垃圾桶），可以按此组合键回退</li>
+</ul>
+<p>应总是开启”显示文件扩展名”，打开Finder的”偏好设置”-&gt;”高级”，勾选“显示所有文件扩展名”。</p>
+<h4 id="Sublime-Text快捷键"><a href="#Sublime-Text快捷键" class="headerlink" title="Sublime Text快捷键"></a>Sublime Text快捷键</h4><p><strong>文件操作</strong>  </p>
+<ul>
+<li>⌘ + N：新建文件</li>
+<li>⌘ + O：打开文件或目录</li>
+<li>⌘ + S：存储当前编辑的文件</li>
+<li>⌘ + ⇧ + G：打开文件或目录时，直接输入目标文件和目录的绝对路径，按回车键进入相应目录。</li>
+</ul>
+<p><strong>查找替换</strong>  </p>
+<ul>
+<li>⌘ + F：在当前文件搜索文本</li>
+<li>⌘ + ⌥ + F：在当前文件搜索和替换文本</li>
+<li>⌘ + ⇧ + F：在指定目录下的文件搜索，并可以替换文本</li>
+</ul>
+<p><strong>文本选择和编辑</strong></p>
+<ul>
+<li>⌘ + ⌥ + 触控板点选|拖选：先按住⌘ + ⌥，再拖拉或点选触控板，选择多列，同时编辑操作</li>
+<li>⌘ + ←/↑/→/↓：按住⌘ + 上下左右键，分别定位到页首、页尾、行首、行末</li>
+<li>⌥ + ←/→：按住⌥ + 左右键，在当前行调到上或下一段文本</li>
+<li>⇧ + ←/↑/→/↓：按住⇧ + 上下左右键，选择文本</li>
+<li>⌥ + ⇧ + ←/→：按住⌥ + ⇧ + 左右键，选择上或下一段文本</li>
+<li>⌘ + A：选中当前窗口所有文本</li>
+<li>⌘ + C：复制选中的文本到剪贴板</li>
+<li>⌘ + V：把剪贴板的内容粘贴到光标位置</li>
+<li>⌘ + Z：误操作按此组合键回退</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/入行/" rel="tag"># 入行</a>
+          
+            <a href="/tags/预备课/" rel="tag"># 预备课</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/05/guide/type-faster/" rel="prev" title="程序员入行之素养(二)：天下武功、唯快不破(成为一名优秀的打字员)">
+                程序员入行之素养(二)：天下武功、唯快不破(成为一名优秀的打字员) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Guoguolong</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/guoguolong" title="GitHub &rarr; https://github.com/guoguolong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:elon.guo@gmail.com" title="E-Mail &rarr; mailto:elon.guo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac笔记本电脑"><span class="nav-number">1.</span> <span class="nav-text">Mac笔记本电脑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熟练macOS操作"><span class="nav-number">2.</span> <span class="nav-text">熟练macOS操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装基础工具"><span class="nav-number">3.</span> <span class="nav-text">安装基础工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触控板和快捷键-Cheat-Sheet"><span class="nav-number">4.</span> <span class="nav-text">触控板和快捷键(Cheat Sheet)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#触控板"><span class="nav-number">4.1.</span> <span class="nav-text">触控板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快捷键"><span class="nav-number">4.2.</span> <span class="nav-text">快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局快捷键"><span class="nav-number">4.2.1.</span> <span class="nav-text">全局快捷键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访达-Finder-快捷键"><span class="nav-number">4.2.2.</span> <span class="nav-text">访达(Finder)快捷键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sublime-Text快捷键"><span class="nav-number">4.2.3.</span> <span class="nav-text">Sublime Text快捷键</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guoguolong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="更新目录★ mv命令 mv 对给定的目录或文件更名或移动  ▷ A. 更名目录”/samples/langs” 为 “/samples/languages”1mv /samples/langs /samples/languages 如果命令运行正确，则不返回任何输出结果。 ▷ B. 验证更名成功与否  输入命令：1ls -l /samples/langs   返回输出结果如下：1ls: /samp">
+<meta name="keywords" content="入行,预备课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员入行之素养(五)：一生万物、万物归一(命令行“更新”电脑资料)">
+<meta property="og:url" content="http://guoguolong.tech/2019/01/15/guide/command-u/index.html">
+<meta property="og:site_name" content="Allen Guo">
+<meta property="og:description" content="更新目录★ mv命令 mv 对给定的目录或文件更名或移动  ▷ A. 更名目录”/samples/langs” 为 “/samples/languages”1mv /samples/langs /samples/languages 如果命令运行正确，则不返回任何输出结果。 ▷ B. 验证更名成功与否  输入命令：1ls -l /samples/langs   返回输出结果如下：1ls: /samp">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-27T10:05:08.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员入行之素养(五)：一生万物、万物归一(命令行“更新”电脑资料)">
+<meta name="twitter:description" content="更新目录★ mv命令 mv 对给定的目录或文件更名或移动  ▷ A. 更名目录”/samples/langs” 为 “/samples/languages”1mv /samples/langs /samples/languages 如果命令运行正确，则不返回任何输出结果。 ▷ B. 验证更名成功与否  输入命令：1ls -l /samples/langs   返回输出结果如下：1ls: /samp">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://guoguolong.tech/2019/01/15/guide/command-u/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>程序员入行之素养(五)：一生万物、万物归一(命令行“更新”电脑资料) | Allen Guo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Allen Guo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Keep it sharp</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-it•互联网">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/IT" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>IT•互联网</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-生活•随想">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/Life" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>生活•随想</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/15/guide/command-u/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">程序员入行之素养(五)：一生万物、万物归一(命令行“更新”电脑资料)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-15 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-15T10:00:00+08:00">2019-01-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="更新目录"><a href="#更新目录" class="headerlink" title="更新目录"></a>更新目录</h2><h3 id="★-mv命令"><a href="#★-mv命令" class="headerlink" title="★ mv命令"></a>★ mv命令</h3><blockquote>
+<p><strong>mv</strong> 对给定的目录或文件更名或移动</p>
+</blockquote>
+<p><strong>▷ A. 更名目录”/samples/langs” 为 “/samples/languages”</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /samples/langs /samples/languages</span><br></pre></td></tr></table></figure></p>
+<p>如果命令运行正确，则不返回任何输出结果。</p>
+<p><strong>▷ B. 验证更名成功与否</strong></p>
+<ol>
+<li>输入命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /samples/langs</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>返回输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls: /samples/langs: No such file or directory</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>输入命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /samples/languages</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>返回输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.pdf  css.pdf  java  python.pdf</span><br></pre></td></tr></table></figure></p>
+<p><strong>思考：languages和Languages是一个目录吗？</strong>  </p>
+<blockquote>
+<p>在Mac和Window操作系统里，文件和目录名不区分大小写，所以是一个目录。但是，Linux和Unix系列操作系统则区分大小写。未来大家写的程序分发到Unix Like系统里的场合很多，建议大家养成不使用大小写字符区分文件和目录的习惯。</p>
+</blockquote>
+<p>mv命令不但可以更改目录名，其实对文件名同样使用，这个大家自己去实验。</p>
+<h2 id="更新文件"><a href="#更新文件" class="headerlink" title="更新文件"></a>更新文件</h2><h3 id="★-echo命令"><a href="#★-echo命令" class="headerlink" title="★ echo命令"></a>★ echo命令</h3><blockquote>
+<p><strong>echo</strong> 组合&gt;&gt;参数追加文本到目标文件</p>
+</blockquote>
+<p><strong>▷ A. echo组合&gt;&gt;符号</strong></p>
+<p>这里，我们要学习如何对文件的内容进行更新操作。</p>
+<p>前文创建的 /samples/database/rdb/mysql.txt 有内容 “MySQL is a open-source database”，现在我们运行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;but it is not free.&apos;&gt;&gt;/samples/database/rdb/mysql.txt</span><br></pre></td></tr></table></figure>
+<p>这将追加&gt;&gt;符号前面双引号里的文字内容到mysql.txt（文件里原来的内容保留）。</p>
+<p><strong>▷ B. 验证mysql.txt内容是否更新</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /samples/database/rdb/mysql.txt</span><br></pre></td></tr></table></figure></p>
+<p>返回如下输出结果：</p>
+<blockquote>
+<p>MySQL is a open-source database<br>but it is not free.</p>
+</blockquote>
+<p><strong>▷ C. 不合法的命令</strong></p>
+<p>现在想在mysql.txt里再追加一行文字：MySQL isn’t Free.，仍然使用echo命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;MySQL isn&apos;t Free.&apos;&gt;&gt;/samples/database/rdb/mysql.txt</span><br></pre></td></tr></table></figure></p>
+<p>结果屏幕会显示&gt;符号，光标停留在&gt;后面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MagicLife:/ banyuan$ echo &apos;MySQL isn&apos;t Free.&apos;&gt;&gt;/samples/database/rdb/mysql.txt</span><br><span class="line">&gt; ▌</span><br><span class="line">``` </span><br><span class="line">合法的命令执行完一般是显示程序执行结果，然后回到提示符下（我的电脑是MagicLife:/ banyuan$，每个人依用户名不同，提示有所不同），可以继续输入下一条命令。</span><br><span class="line"></span><br><span class="line">上述提示表明前面的命令行不完整（合法），因为你既无法看到echo命令的的返回结果。也不能输入下一条命令，怎么办呢？简单按 ***\^ + C*** （^是CTRL键）强制放弃当前程序的执行，回到提示符下。</span><br><span class="line"></span><br><span class="line">仔细看echo命令后面用 ***&apos;*** （单引号）包裹起来的字符串本身也有一个单引号，这将让echo命令无所适从，它无法判定哪个单引号表示字符串的结束还是文字内容本身的 ***&apos;*** 。还记得前文说echo后面的字符串可以 ***&apos;*** 或者 ***&quot;*** 包裹吗？因此，可以修改后的echo命令如下：</span><br></pre></td></tr></table></figure></p>
+<p>echo “MySQL isn’t Free.”&gt;&gt;/samples/database/rdb/mysql.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**▷ D. 字符转义**</span><br><span class="line"></span><br><span class="line">现在 ***&apos;*** 换成了 ***&quot;*** ，可以在文本里包含&apos;字符了。思考一下，如果字符串本身包含一个&quot;怎么办呢？比如想在mysql.txt里追加一行文本： ***Hi guys, &quot; is a special character.*** </span><br><span class="line"></span><br><span class="line">这就需要在文本 **&quot; is a ...** 的 ***&quot;*** 前面添加一个\字符进行转义，让echo明确理解 ***&quot;*** 不是字符串的包裹，而是的的确确的双引号字符。因此，修改后的echo命令如下：</span><br></pre></td></tr></table></figure></p>
+<p>echo “Hi guys, \” is a special character.”&gt;&gt;/samples/database/rdb/mysql.txt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回输出结果如下：</span><br></pre></td></tr></table></figure></p>
+<p>MySQL is a open-source database<br>but it is not free.<br>MySQL isn’t Free.<br>Hi guys, “ is a special character.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### ★ vim命令</span><br><span class="line">**▷ 没人使用echo编辑文字**</span><br><span class="line"></span><br><span class="line">大家都有过写Word文件的的体验吧？通过它的图形化界面，一切都是那么理所当然：创建文件，编辑文件使加粗文字、插入图片，存储文件...</span><br><span class="line"></span><br><span class="line">反观echo的局限则太多，首先它只能用来编辑文字，而且貌似也无法容易地修改文字（上面的例子都在用&gt;&gt;来追加文字）。</span><br><span class="line"></span><br><span class="line">那么命令行下有没有可以易用的文字编辑软件（命令）呢？有，这个就是大名鼎鼎的vi，包括它的升级版[![](https://img-camp.banyuan.club/prep/vim-logo.png?x-oss-process=image/resize,w_30/sharpen,100)](https://www.vim.org/) 也都内置在Mac系统中。虽然半圆入学考试暂时不要求vi的使用，但是它确是接下来操作Linux服务器软件——必知必会！</span><br><span class="line"></span><br><span class="line">## 移动/复制文件或目录</span><br><span class="line">### ★ mv命令</span><br><span class="line">&gt;**mv** 移动给定的目录或文件</span><br><span class="line"></span><br><span class="line">**▷ A. 移动目录**</span><br><span class="line"></span><br><span class="line">如果依次实验完前面的例子，当前 /samples 文件目录结构如下（部分）：</span><br></pre></td></tr></table></figure></p>
+<p>/samples/<br>├── database<br>│   └── rdb<br>│       ├── mysql.txt<br>│       └── oracle.txt<br>…<br>├── os<br>│   ├── linux-guide.jpg<br>│   ├── linux-introduction.docx<br>│   ├── mac os.html<br>│   └── unix<br>│       ├── unix-intro.pdf<br>│       └── what-is-bash.pdf<br>……<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">运行mv命令：</span><br></pre></td></tr></table></figure></p>
+<p>mv /samples/database /samples/os<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">文件目录结构将变更为：</span><br></pre></td></tr></table></figure></p>
+<p>/samples/<br>…<br>├── os<br>│   ├── database<br>│   │   └── rdb<br>│   │       ├── mysql.txt<br>│   │       └── oracle.txt<br>│   ├── linux-guide.jpg<br>│   ├── linux-introduction.docx<br>│   ├── mac os.html<br>│   └── unix<br>│       ├── unix-intro.pdf<br>│       └── what-is-bash.pdf</p>
+<p>…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">对比一下上述变化，能理解mv移动目录的用法了吗？</span><br><span class="line"></span><br><span class="line">**▷ B. 移动文件**</span><br><span class="line"></span><br><span class="line">同理，移动文件到指定目录留给大家自己实践：试试将 **/samples/os/unix/what-is-bash.pdf** 移动到 **/samples/web** 目录？</span><br><span class="line"></span><br><span class="line">最后让我们试试下面的命令：</span><br></pre></td></tr></table></figure></p>
+<p>mv /samples/os/linux-introduction.docx /samples/os/linux-intro.docx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">再运行ls命令检查上面操作成功与否：</span><br></pre></td></tr></table></figure></p>
+<p>ls -l /samples/os<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回输出结果：</span><br></pre></td></tr></table></figure></p>
+<p>drwxr-xr-x  4 AllenGuo  staff    128  4  3 22:15 database<br>-rw-r--r--@ 1 AllenGuo  staff  28113  4  3 18:20 linux-guide.jpg<br>-rw-r--r--@ 1 AllenGuo  staff  17183  4  3 18:22 linux-intro.docx<br>-rw-r--r--@ 1 AllenGuo  staff   1469  4  3 18:25 mac os.html<br>drwxr-xr-x  4 AllenGuo  staff    128  4  3 23:01 unix<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">咦？linux-introduction.docx 文件不见了，取而代之的是 linux-intro.docx，这就是文件名更名操作嘛！</span><br><span class="line"></span><br><span class="line">### ★ cp命令</span><br><span class="line">&gt;**cp** 复制存在的目录或文件</span><br><span class="line"></span><br><span class="line">**▷ A. 复制文件**   </span><br><span class="line">当前目录结构：</span><br></pre></td></tr></table></figure></p>
+<p>/samples/<br>…<br>├── basic<br>│     ├── algorithm.pdf<br>│     ├── compiling.pdf<br>│     └── math<br>│            └── linear.algebra.pdf<br>├── [important]<br>…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如果 /samples/basic/math/linear.algebra.pdf 是份重要的文件，想复制到 **/samples/important** 目录，执行命令如下：</span><br></pre></td></tr></table></figure></p>
+<p>cp /samples/basic/math/linear.algebra.pdf /samples/important<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">操作后文件目录结构如下：</span><br></pre></td></tr></table></figure></p>
+<p>/samples/<br>…<br>├── basic<br>│     ├── algorithm.pdf<br>│     ├── compiling.pdf<br>│     └── math<br>│            └── linear.algebra.pdf<br>├── [important]<br>│      └── linear.algebra.pdf<br>…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**▷ B. 复制目录**</span><br><span class="line"></span><br><span class="line">接前面的实验：复制 /samples/basic 目录下的文件和子目录到目标目录，但保持原目录结构：</span><br></pre></td></tr></table></figure></p>
+<p>cp -r /samples/basic /samples/important<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">操作后目录结构如下：</span><br></pre></td></tr></table></figure></p>
+<p>/samples/<br>├── [basic]<br>│      ├── algorithm.pdf<br>│      ├── compiling.pdf<br>│      └── [math]<br>│             └── linear.algebra.pdf<br>├── [important]<br>│      ├── linear.algebra.pdf<br>│      └── [basic]<br>│             ├── algorithm.pdf<br>│             └── compiling.pdf<br>│             └── [math]<br>│                     └── linear.algebra.pdf<br>…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">为了方便实验，先删除上面复制出来的 /samples/important/basic 的目录，再执行cp命令，不过这次cp命令参数中 **源目录路径** 最后多了 **/** ，如下：</span><br></pre></td></tr></table></figure></p>
+<p>cp -r /samples/basic/ /samples/important<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">操作后目录结构如下：</span><br></pre></td></tr></table></figure></p>
+<p>/samples/<br>├── [basic]<br>│      ├── algorithm.pdf<br>│      ├── compiling.pdf<br>│      └── [math]<br>│             └── linear.algebra.pdf<br>├── [important]<br>│      ├── algorithm.pdf<br>│      ├── compiling.pdf<br>│      ├── linear.algebra.pdf<br>│      └── [math]<br>│              └── linear.algebra.pdf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意到差异了吗？源目录路径中最后一级目录 **basic** 本身没有被创建到目标目录，仅按源目录布局复制了其子目录和文件。</span><br><span class="line"></span><br><span class="line">**提示**：rm命令的-i -f参数对于cp同样适用，大家可以亲自去试试。另外，前面用过的几乎所有命令如果不带参数，都会返回该命令的用法，比如：</span><br></pre></td></tr></table></figure></p>
+<p>cp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">屏幕返回输出结果：</span><br></pre></td></tr></table></figure></p>
+<p>usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvXc] source_file target_file<br>       cp [-R [-H | -L | -P]] [-fi | -n] [-apvXc] source_file … target_directory<br><code>`</code></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/入行/" rel="tag"># 入行</a>
+          
+            <a href="/tags/预备课/" rel="tag"># 预备课</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/15/guide/command/" rel="next" title="程序员入行之素养(五)：一生万物、万物归一(命令行与计算机资料)">
+                <i class="fa fa-chevron-left"></i> 程序员入行之素养(五)：一生万物、万物归一(命令行与计算机资料)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/16/guide/command-r/" rel="prev" title="程序员入行之素养(五)：一生万物、万物归一(命令行“读”电脑资料)">
+                程序员入行之素养(五)：一生万物、万物归一(命令行“读”电脑资料) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Guoguolong</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/guoguolong" title="GitHub &rarr; https://github.com/guoguolong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:elon.guo@gmail.com" title="E-Mail &rarr; mailto:elon.guo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新目录"><span class="nav-number">1.</span> <span class="nav-text">更新目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#★-mv命令"><span class="nav-number">1.1.</span> <span class="nav-text">★ mv命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新文件"><span class="nav-number">2.</span> <span class="nav-text">更新文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#★-echo命令"><span class="nav-number">2.1.</span> <span class="nav-text">★ echo命令</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guoguolong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

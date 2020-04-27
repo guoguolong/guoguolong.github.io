@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="现在开始漫游计算机。想象一下你正走进都柏林的圣三一学院图书馆，面对浩瀚的知识海洋，为了找到自己需要的资料，需要经过如下步骤：  确定你要寻找的资料名称 拿到资料目录，查出资料的所在位置 打开目标位置的资料阅读  1. 确定你要寻找的资料名称假设要找的文件是 banyuan.txt 2. 拿到资料目录，查出资料的所在位置此目录非彼目录，这里说的资料目录实际是资料名称（文件名和目录名）列表。英文表达为">
+<meta name="keywords" content="入行,预备课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员入行之素养(五)：一生万物、万物归一(命令行“读”电脑资料)">
+<meta property="og:url" content="http://guoguolong.tech/2019/01/16/guide/command-r/index.html">
+<meta property="og:site_name" content="Allen Guo">
+<meta property="og:description" content="现在开始漫游计算机。想象一下你正走进都柏林的圣三一学院图书馆，面对浩瀚的知识海洋，为了找到自己需要的资料，需要经过如下步骤：  确定你要寻找的资料名称 拿到资料目录，查出资料的所在位置 打开目标位置的资料阅读  1. 确定你要寻找的资料名称假设要找的文件是 banyuan.txt 2. 拿到资料目录，查出资料的所在位置此目录非彼目录，这里说的资料目录实际是资料名称（文件名和目录名）列表。英文表达为">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/homebrew-logo.png?x-oss-process=image/resize,w_40/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/tree-root.png?x-oss-process=image/resize,w_850/sharpen,100">
+<meta property="og:image" content="https://img-camp.banyuan.club/prep/tree-samples.png?x-oss-process=image/resize,w_850/sharpen,100">
+<meta property="og:updated_time" content="2020-04-27T10:05:08.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员入行之素养(五)：一生万物、万物归一(命令行“读”电脑资料)">
+<meta name="twitter:description" content="现在开始漫游计算机。想象一下你正走进都柏林的圣三一学院图书馆，面对浩瀚的知识海洋，为了找到自己需要的资料，需要经过如下步骤：  确定你要寻找的资料名称 拿到资料目录，查出资料的所在位置 打开目标位置的资料阅读  1. 确定你要寻找的资料名称假设要找的文件是 banyuan.txt 2. 拿到资料目录，查出资料的所在位置此目录非彼目录，这里说的资料目录实际是资料名称（文件名和目录名）列表。英文表达为">
+<meta name="twitter:image" content="https://img-camp.banyuan.club/prep/homebrew-logo.png?x-oss-process=image/resize,w_40/sharpen,100">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://guoguolong.tech/2019/01/16/guide/command-r/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>程序员入行之素养(五)：一生万物、万物归一(命令行“读”电脑资料) | Allen Guo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Allen Guo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Keep it sharp</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about.html" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-it•互联网">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/IT" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>IT•互联网</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-生活•随想">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/Life" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>生活•随想</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/16/guide/command-r/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">程序员入行之素养(五)：一生万物、万物归一(命令行“读”电脑资料)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-16 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-16T10:00:00+08:00">2019-01-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>现在开始漫游计算机。想象一下你正走进都柏林的圣三一学院图书馆，面对浩瀚的知识海洋，为了找到自己需要的资料，需要经过如下步骤：</p>
+<ol>
+<li>确定你要寻找的资料名称</li>
+<li>拿到资料目录，查出资料的所在位置</li>
+<li>打开目标位置的资料阅读</li>
+</ol>
+<h2 id="1-确定你要寻找的资料名称"><a href="#1-确定你要寻找的资料名称" class="headerlink" title="1. 确定你要寻找的资料名称"></a>1. 确定你要寻找的资料名称</h2><p>假设要找的文件是 <strong><em>banyuan.txt</em></strong></p>
+<h2 id="2-拿到资料目录，查出资料的所在位置"><a href="#2-拿到资料目录，查出资料的所在位置" class="headerlink" title="2. 拿到资料目录，查出资料的所在位置"></a>2. 拿到资料目录，查出资料的所在位置</h2><p>此目录非彼目录，这里说的资料目录实际是资料名称（文件名和目录名）列表。英文表达为Catalog而不是Directory。</p>
+<h3 id="★-ls-命令"><a href="#★-ls-命令" class="headerlink" title="★ ls 命令"></a>★ <strong><em>ls</em></strong> 命令</h3><blockquote>
+<p>ls 是Mac操作系统自带的一个命令行程序，用于列出指定目录下文件和子目录。</p>
+</blockquote>
+<p>当然，一切命令行操作的前置操作是：打开<strong>终端</strong>软件。终端窗口也称控制台（Console），在控制台输入命令文字后，按↩（回车键）使运行。</p>
+<p>在控制台输入ls命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /</span><br></pre></td></tr></table></figure></p>
+<p>输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Applications  Users  dev  Library  Volumes  etc  net  tmp  Network  bin  home  opt  sbin  usr  System  cores  private  server  var</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>命令行输入的文字串第一个空格后面的字符串，称之为程序的<strong>参数</strong>，用来调整程序的具体行为。ls 后面的字符串即 <strong>/</strong> 为ls命令的参数。<br>上面命令的具体含义是：查看 <strong>/</strong> 目录下第一级文件和子目录名称（不包含子目录及下面的文件），逻辑结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/</span><br><span class="line">├── Applications</span><br><span class="line">├── Library</span><br><span class="line">├── Network</span><br><span class="line">├── System</span><br><span class="line">├── Users</span><br><span class="line">├── Volumes</span><br><span class="line">├── bin</span><br><span class="line">├── cores</span><br><span class="line">├── dev</span><br><span class="line">├── home</span><br><span class="line">├── net</span><br><span class="line">├── opt</span><br><span class="line">├── private</span><br><span class="line">├── sbin</span><br><span class="line">├── server</span><br><span class="line">├── tmp</span><br><span class="line">├── usr</span><br><span class="line">└── var</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>如果你想查看整个计算机硬盘里的资料目录，可以运行带-R参数的ls命令，不过这个命令的运行时间可能很长，因为资料目录实在太大，你可以随时按 <strong>⌃ + C</strong> 快捷键（⌃是CONTROL键）停止命令的运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -R /</span><br></pre></td></tr></table></figure></p>
+<p>下面摘取了部分输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">/usr:</span><br><span class="line">bin  lib  libexec  local  sbin  share  standalone</span><br><span class="line"></span><br><span class="line">/usr/bin:</span><br><span class="line">as  dns-sd  jarsigner  neqn  renice  topsyscall</span><br><span class="line"></span><br><span class="line">/usr/lib:</span><br><span class="line">PN548_API.dylib  libbsm.dylib  libexpat.dylib  libnetsnmp.5.dylib  libsasl2.dylib</span><br><span class="line"></span><br><span class="line">/usr/lib/groff:</span><br><span class="line">groffer  site-tmac</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>虽然很丑陋，不像前文那么友好的树状图，但终究是罗列出来了一个完整的目录。</p>
+<p>因为电脑上的资料实在太多，即便仅展示资料目录也庞大和琐碎得象一本书，而且文件名不象图书馆里的资料那样有约定的分类编号，上述方法实际很少有人使用。通常都是依照目录的层级渐进查找资料。</p>
+<p>比如，如果预先知道目标资料在/samples的某个更深层次的子目录，可以先运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /samples</span><br></pre></td></tr></table></figure></p>
+<p>返回 <strong>/samples</strong> 目录下的文件和第一级子目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">drwxr-xr-x  6 AllenGuo  staff  192  4  3 23:05 basic</span><br><span class="line">drwxr-xr-x  4 AllenGuo  staff  128  4  3 18:06 culture</span><br><span class="line">drwxr-xr-x  2 AllenGuo  staff   64  4  3 23:09 important</span><br><span class="line">drwxr-xr-x  8 AllenGuo  staff  256  4  3 18:26 langs</span><br><span class="line">drwxr-xr-x  7 AllenGuo  staff  224  4  3 22:58 os</span><br><span class="line">drwxr-xr-x  8 AllenGuo  staff  256  4  3 22:06 web</span><br><span class="line">drwxr-xr-x  3 AllenGuo  staff   96  4  3 21:02 历史</span><br></pre></td></tr></table></figure>
+<p>这里增加了 <strong>-l</strong> 参数，可以让列出的文件或目录竖排排版，将条目的诸多属性追加到条目的左侧，上述结果里每行第一个字母d（Directory）表示每个条目都是目录，从而确定计算机 <strong>/samples</strong> 目录下原来有三个子目录，推测 <strong>banyuan.txt</strong> 可能在 <strong>/samples/culture</strong> 目录，继续运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /samples/culture</span><br></pre></td></tr></table></figure></p>
+<p>返回 <strong>/samples/culture</strong> 目录下的文件和子目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--@ 1 AllenGuo  staff  39  4  3 18:06 banyuan.txt</span><br></pre></td></tr></table></figure></p>
+<p>结果里每行（其实就一行）第一个字符是-，表示该条目是文件（File）。果然，<strong>banyuan.txt</strong> 位于 <strong>/samples/culture</strong> 目录。也可以说：<strong>banyuan.txt</strong> 的全路径是 <strong>/samples/culture/banyuan.txt</strong></p>
+<blockquote>
+<p><strong>提示</strong>：只有预期 /samples 目录下的文件和子目录不是很庞大的时候，才使用上文介绍的-R参数，可以一步到位扫到目标文件所在的位置。</p>
+</blockquote>
+<blockquote>
+<p><strong>小技巧</strong>： 输入 <strong><em>ls -l /samples/cul</em></strong> 时突然忘记了”文化”这个英文单词后面的字符，按 TAB 键试试看，会有小惊喜。</p>
+</blockquote>
+<h3 id="★-find-命令"><a href="#★-find-命令" class="headerlink" title="★ find 命令"></a>★ <strong><em>find</em></strong> 命令</h3><blockquote>
+<p>find 说明文件或目录名特征信息，在指定的目录下搜索。</p>
+</blockquote>
+<p>有没有一种类似搜索引擎（百度）的更直接的资料检索方法，只要输入“banyuan.txt”，就可以找到目标资料？试试find：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /samples -name &apos;banyuan.txt&apos;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>上面的例子含义是：在 <strong>/samples</strong> 目录下（包含所有子目录）搜索名字为 <strong>banyuan.txt</strong> 的文件或目录。再次提醒：这里find后面一串字符 <strong>/samples -name ‘banyuan.txt’</strong> 是find程序的参数。</p>
+</blockquote>
+<p>执行后输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/samples/culture/banyuan.txt</span><br></pre></td></tr></table></figure></p>
+<p>这是搜索到的文件的全路径，即得出结论：<strong>banyuan.txt</strong> 位于 <strong>/samples/culture/</strong> 目录。</p>
+<p><strong>思考</strong>：不管三七二十一，如果find命令指定目标搜索目录是 <strong>/</strong> ， 那么不就可以在整个计算机硬盘里搜索资料了吗？不错，但是尽量不要这样做，因为这会使搜索时间大大变长。</p>
+<h2 id="3-阅读资料"><a href="#3-阅读资料" class="headerlink" title="3. 阅读资料"></a>3. 阅读资料</h2><h3 id="★-cat-命令"><a href="#★-cat-命令" class="headerlink" title="★ cat 命令"></a>★ <strong><em>cat</em></strong> 命令</h3><blockquote>
+<p>cat 显示指定文件的内容，后面第一个参数是文件的全路径名。注意，cat只能显示 <strong>纯文本</strong> 文件（图片文件无能为力）。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /samples/culture/banyuan.txt</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的含义是，显示 <strong>/samples/culture/banyuan.txt</strong> 文件的内容。</p>
+</blockquote>
+<p>输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">半圆学社是持续学习的践行者</span><br></pre></td></tr></table></figure></p>
+<p>上面的文字正是 <strong>banyuan.txt</strong> 文件里内容。</p>
+<h2 id="4-更好用的tree命令"><a href="#4-更好用的tree命令" class="headerlink" title="4. 更好用的tree命令"></a>4. 更好用的tree命令</h2><h3 id="★-tree-命令"><a href="#★-tree-命令" class="headerlink" title="★ tree 命令"></a>★ <strong><em>tree</em></strong> 命令</h3><blockquote>
+<p><strong>tree</strong> 用友好的树形结构列出该计算机的资料目录（Catalog）。</p>
+</blockquote>
+<p>tree不是Mac操作系统自带的命令行程序，也称为<strong>外部命令</strong>，需要依靠<a href="https://brew.sh/" target="_blank" rel="noopener"><img src="https://img-camp.banyuan.club/prep/homebrew-logo.png?x-oss-process=image/resize,w_40/sharpen,100" alt="Homebrew">Homebrew</a>软件来安装。这个工具也将是入学半圆后第一个要学习的软件。同学，要不要现在挑战一下？</p>
+<p>一旦安装好tree之后，输入命令（请注意及时按 ⌃ + C快捷键停止命令的运行，因为整个计算机的资料目录太大了☠）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -N /</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>上面命令的含义是：查看 <strong>/</strong> 目录下所有子目录和文件的名称列表（即：Catalog）， <strong>-N</strong> 参数能确保目录或文件名里中文正确显示。</p>
+</blockquote>
+<p>输出部分结果如下图所示：<br><img src="https://img-camp.banyuan.club/prep/tree-root.png?x-oss-process=image/resize,w_850/sharpen,100" alt="Terminal">  </p>
+<p>因为计算机上的资料太庞大。可以采用类似ls命令渐进法，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -N /samples</span><br></pre></td></tr></table></figure></p>
+<p>这将仅显示 <strong>/samples</strong> 目录下的子目录和文件，输出结果如下：</p>
+<p><img src="https://img-camp.banyuan.club/prep/tree-samples.png?x-oss-process=image/resize,w_850/sharpen,100" alt="Terminal">  </p>
+<p>缩小了搜索范围，将更快地返回资料目录。怎么样，tree工具还不错吧？</p>
+<blockquote>
+<p><strong>扩展名</strong> 阅读上面的文件名，会发现一个共同的特点，它们都以.后面加几个字符结尾。我们称之为文件扩展名。这么做的主要目的是分类文件，比如 <strong>全球通史.docx</strong> 以 .docx 结尾，我们很容易就知道，该文件应该是Word文档。用 <strong>访达</strong> 查看该文件，它会显示出一个Word图标，如果系统安装了Office，轻敲该文件还会自动地打开关联的Word软件。所以，建议制作文档命名时，总是给文件命名以合适的扩展名。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/入行/" rel="tag"># 入行</a>
+          
+            <a href="/tags/预备课/" rel="tag"># 预备课</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/15/guide/command-u/" rel="next" title="程序员入行之素养(五)：一生万物、万物归一(命令行“更新”电脑资料)">
+                <i class="fa fa-chevron-left"></i> 程序员入行之素养(五)：一生万物、万物归一(命令行“更新”电脑资料)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/17/guide/command-c/" rel="prev" title="程序员入行之素养(五)：一生万物、万物归一(命令行“创建”电脑资料)">
+                程序员入行之素养(五)：一生万物、万物归一(命令行“创建”电脑资料) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Guoguolong</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/guoguolong" title="GitHub &rarr; https://github.com/guoguolong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:elon.guo@gmail.com" title="E-Mail &rarr; mailto:elon.guo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-确定你要寻找的资料名称"><span class="nav-number">1.</span> <span class="nav-text">1. 确定你要寻找的资料名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-拿到资料目录，查出资料的所在位置"><span class="nav-number">2.</span> <span class="nav-text">2. 拿到资料目录，查出资料的所在位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#★-ls-命令"><span class="nav-number">2.1.</span> <span class="nav-text">★ ls 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#★-find-命令"><span class="nav-number">2.2.</span> <span class="nav-text">★ find 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-阅读资料"><span class="nav-number">3.</span> <span class="nav-text">3. 阅读资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#★-cat-命令"><span class="nav-number">3.1.</span> <span class="nav-text">★ cat 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-更好用的tree命令"><span class="nav-number">4.</span> <span class="nav-text">4. 更好用的tree命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#★-tree-命令"><span class="nav-number">4.1.</span> <span class="nav-text">★ tree 命令</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guoguolong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
