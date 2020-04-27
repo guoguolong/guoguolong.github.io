@@ -341,253 +341,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/16/guide/command-r/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Guoguolong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Allen Guo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/16/guide/command-r/" class="post-title-link" itemprop="url">程序员入行之素养(五)：一生万物、万物归一(命令行“读”电脑资料)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-16 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-16T10:00:00+08:00">2019-01-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>现在开始漫游计算机。想象一下你正走进都柏林的圣三一学院图书馆，面对浩瀚的知识海洋，为了找到自己需要的资料，需要经过如下步骤：</p>
-<ol>
-<li>确定你要寻找的资料名称</li>
-<li>拿到资料目录，查出资料的所在位置</li>
-<li>打开目标位置的资料阅读</li>
-</ol>
-<h2 id="1-确定你要寻找的资料名称"><a href="#1-确定你要寻找的资料名称" class="headerlink" title="1. 确定你要寻找的资料名称"></a>1. 确定你要寻找的资料名称</h2><p>假设要找的文件是 <strong><em>banyuan.txt</em></strong></p>
-<h2 id="2-拿到资料目录，查出资料的所在位置"><a href="#2-拿到资料目录，查出资料的所在位置" class="headerlink" title="2. 拿到资料目录，查出资料的所在位置"></a>2. 拿到资料目录，查出资料的所在位置</h2><p>此目录非彼目录，这里说的资料目录实际是资料名称（文件名和目录名）列表。英文表达为Catalog而不是Directory。</p>
-<h3 id="★-ls-命令"><a href="#★-ls-命令" class="headerlink" title="★ ls 命令"></a>★ <strong><em>ls</em></strong> 命令</h3><blockquote>
-<p>ls 是Mac操作系统自带的一个命令行程序，用于列出指定目录下文件和子目录。</p>
-</blockquote>
-<p>当然，一切命令行操作的前置操作是：打开<strong>终端</strong>软件。终端窗口也称控制台（Console），在控制台输入命令文字后，按↩（回车键）使运行。</p>
-<p>在控制台输入ls命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /</span><br></pre></td></tr></table></figure></p>
-<p>输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Applications  Users  dev  Library  Volumes  etc  net  tmp  Network  bin  home  opt  sbin  usr  System  cores  private  server  var</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>命令行输入的文字串第一个空格后面的字符串，称之为程序的<strong>参数</strong>，用来调整程序的具体行为。ls 后面的字符串即 <strong>/</strong> 为ls命令的参数。<br>上面命令的具体含义是：查看 <strong>/</strong> 目录下第一级文件和子目录名称（不包含子目录及下面的文件），逻辑结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/</span><br><span class="line">├── Applications</span><br><span class="line">├── Library</span><br><span class="line">├── Network</span><br><span class="line">├── System</span><br><span class="line">├── Users</span><br><span class="line">├── Volumes</span><br><span class="line">├── bin</span><br><span class="line">├── cores</span><br><span class="line">├── dev</span><br><span class="line">├── home</span><br><span class="line">├── net</span><br><span class="line">├── opt</span><br><span class="line">├── private</span><br><span class="line">├── sbin</span><br><span class="line">├── server</span><br><span class="line">├── tmp</span><br><span class="line">├── usr</span><br><span class="line">└── var</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>如果你想查看整个计算机硬盘里的资料目录，可以运行带-R参数的ls命令，不过这个命令的运行时间可能很长，因为资料目录实在太大，你可以随时按 <strong>⌃ + C</strong> 快捷键（⌃是CONTROL键）停止命令的运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -R /</span><br></pre></td></tr></table></figure></p>
-<p>下面摘取了部分输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">/usr:</span><br><span class="line">bin  lib  libexec  local  sbin  share  standalone</span><br><span class="line"></span><br><span class="line">/usr/bin:</span><br><span class="line">as  dns-sd  jarsigner  neqn  renice  topsyscall</span><br><span class="line"></span><br><span class="line">/usr/lib:</span><br><span class="line">PN548_API.dylib  libbsm.dylib  libexpat.dylib  libnetsnmp.5.dylib  libsasl2.dylib</span><br><span class="line"></span><br><span class="line">/usr/lib/groff:</span><br><span class="line">groffer  site-tmac</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>虽然很丑陋，不像前文那么友好的树状图，但终究是罗列出来了一个完整的目录。</p>
-<p>因为电脑上的资料实在太多，即便仅展示资料目录也庞大和琐碎得象一本书，而且文件名不象图书馆里的资料那样有约定的分类编号，上述方法实际很少有人使用。通常都是依照目录的层级渐进查找资料。</p>
-<p>比如，如果预先知道目标资料在/samples的某个更深层次的子目录，可以先运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /samples</span><br></pre></td></tr></table></figure></p>
-<p>返回 <strong>/samples</strong> 目录下的文件和第一级子目录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">drwxr-xr-x  6 AllenGuo  staff  192  4  3 23:05 basic</span><br><span class="line">drwxr-xr-x  4 AllenGuo  staff  128  4  3 18:06 culture</span><br><span class="line">drwxr-xr-x  2 AllenGuo  staff   64  4  3 23:09 important</span><br><span class="line">drwxr-xr-x  8 AllenGuo  staff  256  4  3 18:26 langs</span><br><span class="line">drwxr-xr-x  7 AllenGuo  staff  224  4  3 22:58 os</span><br><span class="line">drwxr-xr-x  8 AllenGuo  staff  256  4  3 22:06 web</span><br><span class="line">drwxr-xr-x  3 AllenGuo  staff   96  4  3 21:02 历史</span><br></pre></td></tr></table></figure>
-<p>这里增加了 <strong>-l</strong> 参数，可以让列出的文件或目录竖排排版，将条目的诸多属性追加到条目的左侧，上述结果里每行第一个字母d（Directory）表示每个条目都是目录，从而确定计算机 <strong>/samples</strong> 目录下原来有三个子目录，推测 <strong>banyuan.txt</strong> 可能在 <strong>/samples/culture</strong> 目录，继续运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /samples/culture</span><br></pre></td></tr></table></figure></p>
-<p>返回 <strong>/samples/culture</strong> 目录下的文件和子目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--@ 1 AllenGuo  staff  39  4  3 18:06 banyuan.txt</span><br></pre></td></tr></table></figure></p>
-<p>结果里每行（其实就一行）第一个字符是-，表示该条目是文件（File）。果然，<strong>banyuan.txt</strong> 位于 <strong>/samples/culture</strong> 目录。也可以说：<strong>banyuan.txt</strong> 的全路径是 <strong>/samples/culture/banyuan.txt</strong></p>
-<blockquote>
-<p><strong>提示</strong>：只有预期 /samples 目录下的文件和子目录不是很庞大的时候，才使用上文介绍的-R参数，可以一步到位扫到目标文件所在的位置。</p>
-</blockquote>
-<blockquote>
-<p><strong>小技巧</strong>： 输入 <strong><em>ls -l /samples/cul</em></strong> 时突然忘记了”文化”这个英文单词后面的字符，按 TAB 键试试看，会有小惊喜。</p>
-</blockquote>
-<h3 id="★-find-命令"><a href="#★-find-命令" class="headerlink" title="★ find 命令"></a>★ <strong><em>find</em></strong> 命令</h3><blockquote>
-<p>find 说明文件或目录名特征信息，在指定的目录下搜索。</p>
-</blockquote>
-<p>有没有一种类似搜索引擎（百度）的更直接的资料检索方法，只要输入“banyuan.txt”，就可以找到目标资料？试试find：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /samples -name &apos;banyuan.txt&apos;</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>上面的例子含义是：在 <strong>/samples</strong> 目录下（包含所有子目录）搜索名字为 <strong>banyuan.txt</strong> 的文件或目录。再次提醒：这里find后面一串字符 <strong>/samples -name ‘banyuan.txt’</strong> 是find程序的参数。</p>
-</blockquote>
-<p>执行后输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/samples/culture/banyuan.txt</span><br></pre></td></tr></table></figure></p>
-<p>这是搜索到的文件的全路径，即得出结论：<strong>banyuan.txt</strong> 位于 <strong>/samples/culture/</strong> 目录。</p>
-<p><strong>思考</strong>：不管三七二十一，如果find命令指定目标搜索目录是 <strong>/</strong> ， 那么不就可以在整个计算机硬盘里搜索资料了吗？不错，但是尽量不要这样做，因为这会使搜索时间大大变长。</p>
-<h2 id="3-阅读资料"><a href="#3-阅读资料" class="headerlink" title="3. 阅读资料"></a>3. 阅读资料</h2><h3 id="★-cat-命令"><a href="#★-cat-命令" class="headerlink" title="★ cat 命令"></a>★ <strong><em>cat</em></strong> 命令</h3><blockquote>
-<p>cat 显示指定文件的内容，后面第一个参数是文件的全路径名。注意，cat只能显示 <strong>纯文本</strong> 文件（图片文件无能为力）。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /samples/culture/banyuan.txt</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上面的含义是，显示 <strong>/samples/culture/banyuan.txt</strong> 文件的内容。</p>
-</blockquote>
-<p>输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">半圆学社是持续学习的践行者</span><br></pre></td></tr></table></figure></p>
-<p>上面的文字正是 <strong>banyuan.txt</strong> 文件里内容。</p>
-<h2 id="4-更好用的tree命令"><a href="#4-更好用的tree命令" class="headerlink" title="4. 更好用的tree命令"></a>4. 更好用的tree命令</h2><h3 id="★-tree-命令"><a href="#★-tree-命令" class="headerlink" title="★ tree 命令"></a>★ <strong><em>tree</em></strong> 命令</h3><blockquote>
-<p><strong>tree</strong> 用友好的树形结构列出该计算机的资料目录（Catalog）。</p>
-</blockquote>
-<p>tree不是Mac操作系统自带的命令行程序，也称为<strong>外部命令</strong>，需要依靠<a href="https://brew.sh/" target="_blank" rel="noopener"><img src="https://img-camp.banyuan.club/prep/homebrew-logo.png?x-oss-process=image/resize,w_40/sharpen,100" alt="Homebrew">Homebrew</a>软件来安装。这个工具也将是入学半圆后第一个要学习的软件。同学，要不要现在挑战一下？</p>
-<p>一旦安装好tree之后，输入命令（请注意及时按 ⌃ + C快捷键停止命令的运行，因为整个计算机的资料目录太大了☠）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -N /</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>上面命令的含义是：查看 <strong>/</strong> 目录下所有子目录和文件的名称列表（即：Catalog）， <strong>-N</strong> 参数能确保目录或文件名里中文正确显示。</p>
-</blockquote>
-<p>输出部分结果如下图所示：<br><img src="https://img-camp.banyuan.club/prep/tree-root.png?x-oss-process=image/resize,w_850/sharpen,100" alt="Terminal">  </p>
-<p>因为计算机上的资料太庞大。可以采用类似ls命令渐进法，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -N /samples</span><br></pre></td></tr></table></figure></p>
-<p>这将仅显示 <strong>/samples</strong> 目录下的子目录和文件，输出结果如下：</p>
-<p><img src="https://img-camp.banyuan.club/prep/tree-samples.png?x-oss-process=image/resize,w_850/sharpen,100" alt="Terminal">  </p>
-<p>缩小了搜索范围，将更快地返回资料目录。怎么样，tree工具还不错吧？</p>
-<blockquote>
-<p><strong>扩展名</strong> 阅读上面的文件名，会发现一个共同的特点，它们都以.后面加几个字符结尾。我们称之为文件扩展名。这么做的主要目的是分类文件，比如 <strong>全球通史.docx</strong> 以 .docx 结尾，我们很容易就知道，该文件应该是Word文档。用 <strong>访达</strong> 查看该文件，它会显示出一个Word图标，如果系统安装了Office，轻敲该文件还会自动地打开关联的Word软件。所以，建议制作文档命名时，总是给文件命名以合适的扩展名。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/15/guide/command-u/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1903,6 +1656,187 @@
 <li>⌘ + V：把剪贴板的内容粘贴到光标位置</li>
 <li>⌘ + Z：误操作按此组合键回退</li>
 </ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2018/11/03/mac/terminal-colors/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/03/mac/terminal-colors/" class="post-title-link" itemprop="url">Mac自带的终端ls命令下文件与文件夹颜色单一的调整</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-03 17:11:12" itemprop="dateCreated datePublished" datetime="2018-11-03T17:11:12+08:00">2018-11-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:17:44" itemprop="dateModified" datetime="2020-04-27T18:17:44+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>macOS自带的终端是款非常好用的ssh工具，但ls命令下文件与文件夹都是单一的颜色，为了更好区分，作出修改。<br>终端默认背景颜色为白色，(终端-&gt;偏好设置-&gt;描述文本)，可修改背景颜色与字体大小。<br>运行下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;echo export LS_OPTIONS=&apos;--color=auto&apos;&quot; # 如果没有指定，则自动选择颜色&quot;&gt;&gt;~/.bash_profile</span><br><span class="line">echo &quot;export CLICOLOR=&apos;Yes&apos; #是否输出颜色&quot;&gt;&gt;~/.bash_profile</span><br><span class="line">echo &quot;export LSCOLORS=&apos;CxfxcxdxbxegedabagGxGx&apos; #指定颜色&quot;&gt;&gt;~/.bash_profile</span><br><span class="line"></span><br><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>ls目录颜色修改到这就ok了。其中绿色为文件夹。</p>
+<p>详细说下LSCOLORS=’CxfxcxdxbxegedabagGxGx’中的值代表的意思，这22个字母2个字母一组分别指定一种类型的文件或者文件夹显示的字体颜色和背景颜色。从第1组到第11组分别指定的文件或文件类型为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">directory #  文件夹目录</span><br><span class="line">symbolic link</span><br><span class="line">socket</span><br><span class="line">pipe</span><br><span class="line">executable</span><br><span class="line">block special</span><br><span class="line">character special</span><br><span class="line">executable with setuid bit set</span><br><span class="line">executable with setgid bit set</span><br><span class="line">directory writable to others, with sticky bit</span><br><span class="line">directory writable to others, without sticky bit</span><br></pre></td></tr></table></figure>
+<p>下面是颜色的字母对照：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">a 黑色</span><br><span class="line">b 红色</span><br><span class="line">c 绿色</span><br><span class="line">d 棕色</span><br><span class="line">e 蓝色</span><br><span class="line">f 洋红色</span><br><span class="line">g 青色</span><br><span class="line">h 浅灰色</span><br><span class="line">A 黑色粗体</span><br><span class="line">B 红色粗体</span><br><span class="line">C 绿色粗体</span><br><span class="line">D 棕色粗体</span><br><span class="line">E 蓝色粗体</span><br><span class="line">F 洋红色粗体</span><br><span class="line">G 青色粗体</span><br><span class="line">H 浅灰色粗体</span><br><span class="line">x 系统默认颜色</span><br></pre></td></tr></table></figure>
+<p>所以，如果我们想把文件夹目录显示成红色，就可以把LSCOLORS设置为bxfxaxdxcxegedabagacad就可以了。</p>
+<p>绿色粗体’CxfxcxdxbxegedabagGxGx’<br>蓝色粗体’ExfxcxdxbxegedabagGxGx’</p>
 
           
         

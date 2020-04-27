@@ -341,175 +341,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2020/04/27/mac/terminal-colors/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Guoguolong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Allen Guo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/04/27/mac/terminal-colors/" class="post-title-link" itemprop="url">Mac自带的终端ls命令下文件与文件夹颜色单一的调整</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-04-27 17:18:55 / 修改时间：18:13:45" itemprop="dateCreated datePublished" datetime="2020-04-27T17:18:55+08:00">2020-04-27</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>macOS自带的终端是款非常好用的ssh工具，但ls命令下文件与文件夹都是单一的颜色，为了更好区分，作出修改。<br>终端默认背景颜色为白色，(终端-&gt;偏好设置-&gt;描述文本)，可修改背景颜色与字体大小。<br>运行下面的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;echo export LS_OPTIONS=&apos;--color=auto&apos;&quot; # 如果没有指定，则自动选择颜色&quot;&gt;&gt;~/.bash_profile</span><br><span class="line">echo &quot;export CLICOLOR=&apos;Yes&apos; #是否输出颜色&quot;&gt;&gt;~/.bash_profile</span><br><span class="line">echo &quot;export LSCOLORS=&apos;CxfxcxdxbxegedabagGxGx&apos; #指定颜色&quot;&gt;&gt;~/.bash_profile</span><br><span class="line"></span><br><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>ls目录颜色修改到这就ok了。其中绿色为文件夹。</p>
-<p>详细说下LSCOLORS=’CxfxcxdxbxegedabagGxGx’中的值代表的意思，这22个字母2个字母一组分别指定一种类型的文件或者文件夹显示的字体颜色和背景颜色。从第1组到第11组分别指定的文件或文件类型为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">directory #  文件夹目录</span><br><span class="line">symbolic link</span><br><span class="line">socket</span><br><span class="line">pipe</span><br><span class="line">executable</span><br><span class="line">block special</span><br><span class="line">character special</span><br><span class="line">executable with setuid bit set</span><br><span class="line">executable with setgid bit set</span><br><span class="line">directory writable to others, with sticky bit</span><br><span class="line">directory writable to others, without sticky bit</span><br></pre></td></tr></table></figure>
-<p>下面是颜色的字母对照：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">a 黑色</span><br><span class="line">b 红色</span><br><span class="line">c 绿色</span><br><span class="line">d 棕色</span><br><span class="line">e 蓝色</span><br><span class="line">f 洋红色</span><br><span class="line">g 青色</span><br><span class="line">h 浅灰色</span><br><span class="line">A 黑色粗体</span><br><span class="line">B 红色粗体</span><br><span class="line">C 绿色粗体</span><br><span class="line">D 棕色粗体</span><br><span class="line">E 蓝色粗体</span><br><span class="line">F 洋红色粗体</span><br><span class="line">G 青色粗体</span><br><span class="line">H 浅灰色粗体</span><br><span class="line">x 系统默认颜色</span><br></pre></td></tr></table></figure>
-<p>所以，如果我们想把文件夹目录显示成红色，就可以把LSCOLORS设置为bxfxaxdxcxegedabagacad就可以了。</p>
-<p>绿色粗体’CxfxcxdxbxegedabagGxGx’<br>蓝色粗体’ExfxcxdxbxegedabagGxGx’</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2020/04/27/git/git-workflow-suggestion/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2388,6 +2219,215 @@
 <p>zsh 用户(少见)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&apos; &gt;&gt; ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
 <p>Done</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/04/03/c/spawn-fcgi-mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/03/c/spawn-fcgi-mac/" class="post-title-link" itemprop="url">Mac OS下用Nginx/spawn-fcgi/fastcgi写C的Web应用</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-03 10:00:00" itemprop="dateCreated datePublished" datetime="2019-04-03T10:00:00+08:00">2019-04-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="I-编写一个网页（在命令行运行）"><a href="#I-编写一个网页（在命令行运行）" class="headerlink" title="I. 编写一个网页（在命令行运行）"></a>I. 编写一个网页（在命令行运行）</h2><h3 id="1-下载安装fastcgi库"><a href="#1-下载安装fastcgi库" class="headerlink" title="1.下载安装fastcgi库"></a>1.下载安装fastcgi库</h3><blockquote>
+<p>brew install fcgi</p>
+</blockquote>
+<h3 id="2-写一个动态网页"><a href="#2-写一个动态网页" class="headerlink" title="2. 写一个动态网页"></a>2. 写一个动态网页</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设代码放到/projects/cgi目录</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcgi_stdio.h&gt; //要写在行首（fcgi_stdio.h里定义的printf与c里的冲突），且用冒号（引用路径而非全局）</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(FCGI_Accept() &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Content-type: text/html\r\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\r\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hello Boot!&lt;br&gt;\r\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Request number %d."</span>, count++);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译源代码：</p>
+<blockquote>
+<p>gcc /projects/cgi/boot.c -o /projects/cgi/boot.cgi -lfcgi</p>
+</blockquote>
+<p>注：gcc参数-L、-i未指定，表明brew安装fcgi时已经加入到搜索目录/usr/local/lib 和 /user/local/include目录</p>
+<p>命令行运行：</p>
+<blockquote>
+<p>/projects/cgi/boot.cgi </p>
+</blockquote>
+<p>屏幕输出：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Content-type: text/html</span><br><span class="line">Hello Boot!<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Request number 0</span><br></pre></td></tr></table></figure>
+<h2 id="II-从浏览器访问boot-cgi"><a href="#II-从浏览器访问boot-cgi" class="headerlink" title="II. 从浏览器访问boot.cgi"></a>II. 从浏览器访问boot.cgi</h2><h3 id="1-安装Nginx、spawn-fcgi"><a href="#1-安装Nginx、spawn-fcgi" class="headerlink" title="1. 安装Nginx、spawn-fcgi"></a>1. 安装Nginx、spawn-fcgi</h3><blockquote>
+<p>brew install nginx</p>
+</blockquote>
+<p>brew install spawn-fcgi</p>
+<h3 id="2-启动spawn"><a href="#2-启动spawn" class="headerlink" title="2. 启动spawn"></a>2. 启动spawn</h3><blockquote>
+<p>spawn-fcgi -a 127.0.0.1 -p 9001 -F 1 -f /projects/cgi/boot.cgi</p>
+</blockquote>
+<p>启动9001端口提供CGI服务。</p>
+<h3 id="3-配置nginx连接spawn-fcgi，重新启动"><a href="#3-配置nginx连接spawn-fcgi，重新启动" class="headerlink" title="3. 配置nginx连接spawn-fcgi，重新启动"></a>3. 配置nginx连接spawn-fcgi，重新启动</h3><p>在server节点（比如localhost）增加一个路径匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">location ~ ^.*\.cgi$ &#123;</span><br><span class="line">    root /project/cgi/;</span><br><span class="line">    fastcgi_pass 127.0.0.1:9001; #让其监听9001端口，与spawn-cgi监听端口一致</span><br><span class="line">    fastcgi_index index.cgi;</span><br><span class="line">    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</span><br><span class="line">    include fastcgi_params;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<font style="color:red"><br>注：经测试发现，配置中fastcgi_index、fastcgi_param、root都是不必要的; 关键就在fastcgi_pass配置。但是网上看别人资料从未有提起。<br></font>
+
+<h3 id="4-访问该网页"><a href="#4-访问该网页" class="headerlink" title="4. 访问该网页"></a>4. 访问该网页</h3><p>浏览器输入：<a href="http://localhost/boot.cgi" target="_blank" rel="noopener">http://localhost/boot.cgi</a> 返回页面显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello Boot!</span><br><span class="line">Request number 0.</span><br></pre></td></tr></table></figure>
+<p>反复访问这个URL，Request number的值会加1，大家可以自己思考下这是为什么。</p>
 
           
         
