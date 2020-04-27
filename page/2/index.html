@@ -341,384 +341,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2020/04/27/blog-with-hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Guoguolong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Allen Guo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/04/27/blog-with-hexo/" class="post-title-link" itemprop="url">用Hexo + Github搭建个人博客</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-04-27 18:05:08" itemprop="dateCreated datePublished" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>是一个博客框架，基于Node.js，用Markdown创作博客内容，Hexo将其翻译成布局精美的静态HTML。</li>
-<li><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，创建好的博客文章(网页)可以发布到 GitHub Pages。</li>
-<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> 一个分布式代码版本控制工具</li>
-</ul>
-<h2 id="用Github写博客"><a href="#用Github写博客" class="headerlink" title="用Github写博客"></a>用Github写博客</h2><h3 id="github-com上创建账号"><a href="#github-com上创建账号" class="headerlink" title="github.com上创建账号"></a>github.com上创建账号</h3><p>在github.com上创建一个账号，比如叫：lixiaobai.</p>
-<h3 id="github-com上创建仓库"><a href="#github-com上创建仓库" class="headerlink" title="github.com上创建仓库"></a>github.com上创建仓库</h3><p>创建一个代码仓库，名字必须为：&lt;你的账户名&gt;.github.io 用来存放博客文章。以上面的账户为例，你的仓库名就应该为：lixiaobai.github.io，然后通过浏览器访问 <a href="https://lixiaobai.github.io" target="_blank" rel="noopener">https://lixiaobai.github.io</a> 就可以访问自己的博客了。</p>
-<p>最开始，你的访问可能空空如也。向该代码仓库里增加 hello.md，内容为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Welcome Li Xiaobai.</span><br></pre></td></tr></table></figure>
-<p>浏览器访问 <a href="https://lixiaobai.github.io/hello.html" target="_blank" rel="noopener">https://lixiaobai.github.io/hello.html</a> ，看看效果怎么样。</p>
-<p>思考一下博客工作的过程：你写了一篇Markdown文件hello.md，但是却通过hello.html访问了它的内容，怎么做到的呢？其实也不难理解，GitHub Pages实际上做了自动翻译工作，预先将hello.md翻译成了hello.html。</p>
-<h2 id="用Hexo写精美的博客"><a href="#用Hexo写精美的博客" class="headerlink" title="用Hexo写精美的博客"></a>用Hexo写精美的博客</h2><p>GitHub Pages官方采用了<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>博客框架，编译的HTML可以使用各种漂亮的主题，不过功能还不够强大，所以我选择Hexot替代Jekyll。</p>
-<p>本文并不打算介绍Hexo的安装和配置，如果你懂Node.js和Markdown，官网 <a href="https://hexo.io" target="_blank" rel="noopener">https://hexo.io</a> 的文档已经足够清楚；如果你不懂Node.js，说给你，你也用不了。</p>
-<p>用Hexo写完博客，使用hexo g -d命令将其发布GitHub Pages。它实际分成了两步：</p>
-<ul>
-<li>把博客内容翻译了 html 文件；</li>
-<li>用git把html发布到名字为 lixiaobai.github.io 的 GitHub 仓库的 master 分支（这一步需要做对应的设置）</li>
-</ul>
-<h2 id="博客管理最佳实践"><a href="#博客管理最佳实践" class="headerlink" title="博客管理最佳实践"></a>博客管理最佳实践</h2><h3 id="源文件和编译文件"><a href="#源文件和编译文件" class="headerlink" title="源文件和编译文件"></a>源文件和编译文件</h3><ul>
-<li>你应该为 lixiaobai.github.io 仓库创建一个分支，如 blog，将博客源文件保存到该分支；</li>
-<li>总是在 blog 分支编写博客，然后通过hexo d -g 发布到 master 分支。</li>
-</ul>
-<h3 id="更好的主题"><a href="#更好的主题" class="headerlink" title="更好的主题"></a>更好的主题</h3><p>hexo 默认主题不合我意，还是：<a href="https://theme-next.org/" target="_blank" rel="noopener">Next</a> 漂亮。 再漂亮的主题也可能需要个性定制。因此将 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a> fork到自己的账户里，lixiaobai fork出来名字应为： <a href="https://github.com/lixiaobai/hexo-theme-next" target="_blank" rel="noopener">https://github.com/lixiaobai/hexo-theme-next</a> , 便于后续更改保存。</p>
-<p>建议使用 git submoudle 管理 Next 主题，进入hexo工程目录运行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/lixiaobai/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>下次在其他地方clone项目要使用 git submodule update –init –recursive 更新， 更多关于submodule看<a href="/2019/05/18/git/submodule/">这里</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2020/04/27/c/c-coding-style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Guoguolong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Allen Guo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/04/27/c/c-coding-style/" class="post-title-link" itemprop="url">Google C Style和Sublime Text的C插件</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-04-27 18:05:08" itemprop="dateCreated datePublished" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>代码风格：C代码风格遵从 <a href="https://google.github.io/styleguide/cppguide.html" target="_blank" rel="noopener">Google C Style</a> 事半功倍。</p>
-<p>工具：我用Sublime Text写C代码，其格式化插件，几乎只能使用 <a href="https://packagecontrol.io/packages/SublimeAStyleFormatter" target="_blank" rel="noopener">SublimeAStyleFormatter</a>，不过已经足够了，而且足够的好。</p>
-<h2 id="安装Sublime下的SublimeAStyleFormatter插件"><a href="#安装Sublime下的SublimeAStyleFormatter插件" class="headerlink" title="安装Sublime下的SublimeAStyleFormatter插件"></a>安装Sublime下的SublimeAStyleFormatter插件</h2><p>SublimeAStyleFormatter 主要关注在C、Java代码格式化。</p>
-<p>Mac OS下打开Sublime Text，按CMD + SHIFT + P，弹出窗口输入install，下拉列表第一个显示的条目是：”Package Control: Install Package”，选中按回车键，输入 SublimeAStyleFormatter ，甚至只输入部分文字就会下拉列出该插件的名字，选中然后按回车键，稍等片刻，安装完毕。</p>
-<blockquote>
-<p><strong><em>1. 什么？按CMD + SHIFT + P，输入install的时候就卡住，你没有看到这个下拉条目？</em></strong><br>这是你应该去 <a href="https://packagecontrol.io" target="_blank" rel="noopener">https://packagecontrol.io</a> 首先安装 Sublime Text 的插件的管理工具。</p>
-<p><strong><em>2. 什么？按CMD + SHIFT + P完全没有反应？</em></strong><br>Terrible，你不得不先学会科学上网！</p>
-</blockquote>
-<h2 id="SublimeAStyleFormatter的基本用法"><a href="#SublimeAStyleFormatter的基本用法" class="headerlink" title="SublimeAStyleFormatter的基本用法"></a>SublimeAStyleFormatter的基本用法</h2><p>写一段C代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">printf (&quot;Hello World\n&quot;) ;</span><br><span class="line">int sum =3+4;</span><br><span class="line">return 0;</span><br><span class="line">&#125;&#125;Ï</span><br></pre></td></tr></table></figure></p>
-<p>打开右键菜单 AStyleFormater-&gt;Format（快捷键：CMD + OPTION + F），点击确认后格式成：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"Hello World\n"</span>) ;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">3</span> + <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>的确好看了不少，不过还不足够，比如prinf函数和(之间有一个多余的空格，另外缩进是TAB，不是我想要的4个spaces。怎么办？</p>
-<p>分别打开插件设置：Preferences-&gt;Package Settings-&gt;SublimeAStyleFormatter-&gt;Settings - Default 和 Settings - User，将Settings - Default里项修改的项复制到Settings - User里进行修改，如下：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"options_default"</span>: &#123;</span><br><span class="line">        <span class="attr">"indent"</span>: <span class="string">"spaces"</span>,</span><br><span class="line">        <span class="attr">"indent-spaces"</span>: <span class="number">4</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>保存后再格式化一次，看看缩进的TAB是不是变成了4个spaces。</p>
-<h2 id="SublimeAStyleFormatter使用Google-C-Style"><a href="#SublimeAStyleFormatter使用Google-C-Style" class="headerlink" title="SublimeAStyleFormatter使用Google C Style"></a>SublimeAStyleFormatter使用Google C Style</h2><p>我的项目代码遵从了 <a href="https://google.github.io/styleguide/cppguide.html" target="_blank" rel="noopener">Google C Style</a>(Google的代码风格指南开源在 <a href="https://github.com/google/styleguide" target="_blank" rel="noopener">https://github.com/google/styleguide</a> )，Oops，那么多代码格式设定看来都要在 SublimeAStyleFormatter 里设置。</p>
-<p>参考 SublimeAStyleFormatter文档（开源在 <a href="https://github.com/timonwong/SublimeAStyleFormatter" target="_blank" rel="noopener">https://github.com/timonwong/SublimeAStyleFormatter</a> ），文档介绍极其简单，原来它是基于 <a href="https://sourceforge.net/projects/astyle/" target="_blank" rel="noopener">Artistic Style</a>，其实是要学会 Artistic Style 如何设置代码风格，然后将设置参数存成一个文本文件，如 .astylerc，然后被 SublimeAStyleFormatter 引用即可。</p>
-<p>符合Google C Style的Artistic Style参数设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">--style=google</span><br><span class="line"></span><br><span class="line">--indent=spaces=4</span><br><span class="line"></span><br><span class="line">--attach-namespaces</span><br><span class="line">--attach-classes</span><br><span class="line">--attach-inlines</span><br><span class="line"></span><br><span class="line">--add-brackets</span><br><span class="line"></span><br><span class="line">--align-pointer=name</span><br><span class="line">--align-reference=name</span><br><span class="line"></span><br><span class="line">--max-code-length=200</span><br><span class="line">--break-after-logical</span><br><span class="line"></span><br><span class="line">--pad-oper</span><br><span class="line">--unpad-paren</span><br><span class="line"></span><br><span class="line">--break-blocks</span><br><span class="line">--pad-header</span><br></pre></td></tr></table></figure></p>
-<p>文件存储为.astylerc，放到家目录，插件的Settings - User再次修改为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;options_default&quot;: &#123;</span><br><span class="line">        &quot;indent&quot;: &quot;spaces&quot;,</span><br><span class="line">        &quot;indent-spaces&quot;: 4,</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;options_c&quot;: &#123;</span><br><span class="line">        &quot;additional_options_file&quot;: &quot;$HOME/.astylerc&quot;</span><br><span class="line">    &#125;,    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注：$HOME就指代你的家目录</p>
-</blockquote>
-<p>再按快捷键 CTRL + OPTION + F格式化代码，看看是不是变成下面这样：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>) ;</span><br><span class="line">  <span class="keyword">int</span> sum = <span class="number">3</span> + <span class="number">4</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>DONE，完美！</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/04/03/c/spawn-fcgi-mac/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -872,6 +494,418 @@
 <h3 id="4-访问该网页"><a href="#4-访问该网页" class="headerlink" title="4. 访问该网页"></a>4. 访问该网页</h3><p>浏览器输入：<a href="http://localhost/boot.cgi" target="_blank" rel="noopener">http://localhost/boot.cgi</a> 返回页面显示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello Boot!</span><br><span class="line">Request number 0.</span><br></pre></td></tr></table></figure>
 <p>反复访问这个URL，Request number的值会加1，大家可以自己思考下这是为什么。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/03/01/blog-with-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/01/blog-with-hexo/" class="post-title-link" itemprop="url">用Hexo + Github搭建个人博客</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-01 12:11:09" itemprop="dateCreated datePublished" datetime="2019-03-01T12:11:09+08:00">2019-03-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:10:49" itemprop="dateModified" datetime="2020-04-27T18:10:49+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>是一个博客框架，基于Node.js，用Markdown创作博客内容，Hexo将其翻译成布局精美的静态HTML。</li>
+<li><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，创建好的博客文章(网页)可以发布到 GitHub Pages。</li>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> 一个分布式代码版本控制工具</li>
+</ul>
+<h2 id="用Github写博客"><a href="#用Github写博客" class="headerlink" title="用Github写博客"></a>用Github写博客</h2><h3 id="github-com上创建账号"><a href="#github-com上创建账号" class="headerlink" title="github.com上创建账号"></a>github.com上创建账号</h3><p>在github.com上创建一个账号，比如叫：lixiaobai.</p>
+<h3 id="github-com上创建仓库"><a href="#github-com上创建仓库" class="headerlink" title="github.com上创建仓库"></a>github.com上创建仓库</h3><p>创建一个代码仓库，名字必须为：&lt;你的账户名&gt;.github.io 用来存放博客文章。以上面的账户为例，你的仓库名就应该为：lixiaobai.github.io，然后通过浏览器访问 <a href="https://lixiaobai.github.io" target="_blank" rel="noopener">https://lixiaobai.github.io</a> 就可以访问自己的博客了。</p>
+<p>最开始，你的访问可能空空如也。向该代码仓库里增加 hello.md，内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Welcome Li Xiaobai.</span><br></pre></td></tr></table></figure>
+<p>浏览器访问 <a href="https://lixiaobai.github.io/hello.html" target="_blank" rel="noopener">https://lixiaobai.github.io/hello.html</a> ，看看效果怎么样。</p>
+<p>思考一下博客工作的过程：你写了一篇Markdown文件hello.md，但是却通过hello.html访问了它的内容，怎么做到的呢？其实也不难理解，GitHub Pages实际上做了自动翻译工作，预先将hello.md翻译成了hello.html。</p>
+<h2 id="用Hexo写精美的博客"><a href="#用Hexo写精美的博客" class="headerlink" title="用Hexo写精美的博客"></a>用Hexo写精美的博客</h2><p>GitHub Pages官方采用了<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>博客框架，编译的HTML可以使用各种漂亮的主题，不过功能还不够强大，所以我选择Hexot替代Jekyll。</p>
+<p>本文并不打算介绍Hexo的安装和配置，如果你懂Node.js和Markdown，官网 <a href="https://hexo.io" target="_blank" rel="noopener">https://hexo.io</a> 的文档已经足够清楚；如果你不懂Node.js，说给你，你也用不了。</p>
+<p>用Hexo写完博客，使用hexo g -d命令将其发布GitHub Pages。它实际分成了两步：</p>
+<ul>
+<li>把博客内容翻译了 html 文件；</li>
+<li>用git把html发布到名字为 lixiaobai.github.io 的 GitHub 仓库的 master 分支（这一步需要做对应的设置）</li>
+</ul>
+<h2 id="博客管理最佳实践"><a href="#博客管理最佳实践" class="headerlink" title="博客管理最佳实践"></a>博客管理最佳实践</h2><h3 id="源文件和编译文件"><a href="#源文件和编译文件" class="headerlink" title="源文件和编译文件"></a>源文件和编译文件</h3><ul>
+<li>你应该为 lixiaobai.github.io 仓库创建一个分支，如 blog，将博客源文件保存到该分支；</li>
+<li>总是在 blog 分支编写博客，然后通过hexo d -g 发布到 master 分支。</li>
+</ul>
+<h3 id="更好的主题"><a href="#更好的主题" class="headerlink" title="更好的主题"></a>更好的主题</h3><p>hexo 默认主题不合我意，还是：<a href="https://theme-next.org/" target="_blank" rel="noopener">Next</a> 漂亮。 再漂亮的主题也可能需要个性定制。因此将 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a> fork到自己的账户里，lixiaobai fork出来名字应为： <a href="https://github.com/lixiaobai/hexo-theme-next" target="_blank" rel="noopener">https://github.com/lixiaobai/hexo-theme-next</a> , 便于后续更改保存。</p>
+<p>建议使用 git submoudle 管理 Next 主题，进入hexo工程目录运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/lixiaobai/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>下次在其他地方clone项目要使用 git submodule update –init –recursive 更新， 更多关于submodule看<a href="/2019/05/18/git/submodule/">这里</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/02/05/sanwang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/05/sanwang/" class="post-title-link" itemprop="url">穆罕默德•郭昭宇 趣事集锦</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-05 22:10:09" itemprop="dateCreated datePublished" datetime="2019-02-05T22:10:09+08:00">2019-02-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:12:47" itemprop="dateModified" datetime="2020-04-27T18:12:47+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Life/三旺/" itemprop="url" rel="index"><span itemprop="name">三旺</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <img src="/2019/02/05/sanwang/sanwang.jpg" title="穆罕默德•三旺">
+<p>穆罕默德•郭昭宇，诨名：郭小驴，生于一七年春，体重八斤一两，爱好：吃奶奶（nāi nāi）…</p>
+<blockquote>
+<p>六一儿童节上午郭昭宇和他妈坐在车后排，我坐副驾驶，他妈问：暑假你是去东北奶奶家还是在上海和爸爸在家，郭昭宇说：看海豚…反复问，反复回答看海豚。<br>我说：”好好，看海豚，明天就去看海豚“。 郭昭宇手舞足蹈可高兴了。<br>他妈问我：明天你真带他去看海豚啊。 我说：看个屁啊，我要上课。<br>郭昭宇带着哭腔用抬手指着我说：怕爸爸，怕爸爸，我怕他…<br>2019-06-01</p>
+</blockquote>
+<blockquote>
+<p>郭昭宇半夜喊妈妈吃奶声嘶力竭：妈妈… 不理他继续喊：妈妈吃奶… 再不理他继续喊：陶静…<br>2019-05-23</p>
+</blockquote>
+<blockquote>
+<p>吃奶时，我对着他耳朵说：丢不丢人？郭昭宇总会把嘴拔出奶头，正经地回答我：不丢银(人)<br>2019-05-20</p>
+</blockquote>
+<blockquote>
+<p>两岁时去医院体检，被扎了手指验血，这可不得了了，妈妈只要再带他到任何一个检查室，他就大声喊：“我要离开这里！”，无奈量了身高体重，撤。<br>2019-05-17</p>
+</blockquote>
+<blockquote>
+<p>郭昭宇就喜欢玩电蚊拍，那天把他电到了，哇哇哭。以后我每次拿拍打蚊子就喊他来摸，他一边跑一边说：不摸 不摸…<br>2019-05-08</p>
+</blockquote>
+<blockquote>
+<p>和小朋友在一起玩，一个小姐姐突然对郭昭宇喊了一嗓子，他怔了一下，然后面无表情地说：吓死宝宝了.<br>2019-05-02</p>
+</blockquote>
+<blockquote>
+<p>被郭昭宇约法了三不准 —— 下班到家只要见我玩手机，就说：爸爸玩手机也不行、看电视也不行、说话也不行。我说那跟宝宝说话行不行，他说：行<br>2019-03-08</p>
+</blockquote>
+<blockquote>
+<p>淋着小雨下班回到家，一开门郭昭宇就送上了小雨伞：“爸爸雨伞”，我感动地接过来，琢磨这孩子路还走不稳呢，就这么知道疼人，小子继续说：“出去溜溜…”<br>2018-12-01</p>
+</blockquote>
 
           
         
