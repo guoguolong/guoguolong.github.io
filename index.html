@@ -341,6 +341,199 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2020/05/20/javascript/how-to-use-apollo-cli/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/05/20/javascript/how-to-use-apollo-cli/" class="post-title-link" itemprop="url">How work with Apollo CLI</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-05-20 21:35:09" itemprop="dateCreated datePublished" datetime="2020-05-20T21:35:09+08:00">2020-05-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-06-07 13:17:45" itemprop="dateModified" datetime="2020-06-07T13:17:45+08:00">2020-06-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Apollo CLI is a productive tool when integrate Apollo into your application. It can: </p>
+<ol>
+<li>service:push - Publish Schema to <a href="https://engine.apollographql.com" target="_blank" rel="noopener">https://engine.apollographql.com</a>, share among your team.</li>
+<li>client:codegen - Generate TypeScript interface definition from GraphQL schema.</li>
+</ol>
+<h2 id="Install-Apollo-CLI"><a href="#Install-Apollo-CLI" class="headerlink" title="Install Apollo CLI"></a>Install Apollo CLI</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g apollo</span><br></pre></td></tr></table></figure>
+<h2 id="Publish-Schema：-service-push"><a href="#Publish-Schema：-service-push" class="headerlink" title="Publish Schema： service:push"></a>Publish Schema： service:push</h2><p>Here we assume you’ve already started Apollo Server(Started on port 4000). Open <a href="https://engine.apollographql.com" target="_blank" rel="noopener">https://engine.apollographql.com</a> in browser, create a bucket named <code>magic-mooc</code>， Then run :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apollo service:push --graph=magic-mooc --key=user:gh.guoguolong:vKOUWxxp71eyns94RnorPg --endpoint=http://localhost:4000</span><br></pre></td></tr></table></figure>
+<p>it’ll publish schema to engine.apollographql.com. Let your other team members check it.</p>
+<p>You can also move the command arguments into the file .env and apollo.config.js, then simply use <code>apollo service:push</code> to publish it.</p>
+<p><strong># apollo.config.js</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    service: &#123;</span><br><span class="line">        name: &apos;magic-mooc&apos;,</span><br><span class="line">        endpoint: &#123;</span><br><span class="line">            url: &apos;http://localhost:4000/graphql&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong># .env</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APOLLO_KEY=user:gh.guoguolong:vKOUWxxp71eyns94RnorPg</span><br></pre></td></tr></table></figure></p>
+<p>Try <code>aplollo service:push</code> again.</p>
+<h2 id="Generate-TypeScript-definition-file：client-codegen"><a href="#Generate-TypeScript-definition-file：client-codegen" class="headerlink" title="Generate TypeScript definition file：client:codegen"></a>Generate TypeScript definition file：client:codegen</h2><p>We often develop ReactJS with TypeScript for type check. <code>apollo client:codegen</code> can check all the source code under src folder and it’s sub-folder. If find any gql definition, it’ll generate TypeScript interface into the <strong>generated</strong> folder for subsequent use.</p>
+<p>Unfortunately, I only succeed it by the file way(schema.gql). below is the sample I made:</p>
+<h3 id="Step-1-Create-apollo-config-js"><a href="#Step-1-Create-apollo-config-js" class="headerlink" title="Step 1. Create apollo.config.js"></a>Step 1. Create apollo.config.js</h3><p>Move to project root folder(You should have src sub-folder and some of the gql definitions), create apollo.config.js like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    client: &#123;</span><br><span class="line">        service: &#123;</span><br><span class="line">            localSchemaFile: &quot;./schema.gql&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Step-2-Download-schema-gql"><a href="#Step-2-Download-schema-gql" class="headerlink" title="Step 2. Download schema.gql"></a>Step 2. Download schema.gql</h3><p>Open Graph Endpoint in browser: <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>, easily find the gql definitions then download it as schema.gql</p>
+<h3 id="Step-3-Generate-TypeScript-Interface"><a href="#Step-3-Generate-TypeScript-Interface" class="headerlink" title="Step 3. Generate TypeScript Interface"></a>Step 3. Generate TypeScript Interface</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apollo client:codegen --target typescript --watch</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Reference：<a href="https://www.apollographql.com/docs/devtools/apollo-config" target="_blank" rel="noopener">Configuring Apollo projects</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2020/05/15/javascript/web-ui-component-lib-spec/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -458,199 +651,6 @@
         
           
             <iframe width="560" height="315" src="https://www.youtube.com/embed/IDTWvrd51Bk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2020/05/15/javascript/how-to-use-apollo-cli/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Guoguolong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Allen Guo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/05/15/javascript/how-to-use-apollo-cli/" class="post-title-link" itemprop="url">How to use Apollo CLI tool</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-05-15 22:35:09" itemprop="dateCreated datePublished" datetime="2020-05-15T22:35:09+08:00">2020-05-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-06-07 12:57:50" itemprop="dateModified" datetime="2020-06-07T12:57:50+08:00">2020-06-07</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Apollo CLI is a productive tool when integrate Apollo into your application. It can: </p>
-<ol>
-<li>service:push - Publish Schema to <a href="https://engine.apollographql.com" target="_blank" rel="noopener">https://engine.apollographql.com</a>, share among your team.</li>
-<li>client:codegen - Generate TypeScript interface definition from GraphQL schema.</li>
-</ol>
-<h2 id="Install-Apollo-CLI"><a href="#Install-Apollo-CLI" class="headerlink" title="Install Apollo CLI"></a>Install Apollo CLI</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g apollo</span><br></pre></td></tr></table></figure>
-<h2 id="Publish-Schema：-service-push"><a href="#Publish-Schema：-service-push" class="headerlink" title="Publish Schema： service:push"></a>Publish Schema： service:push</h2><p>Here we assume you’ve already started Apollo Server(Started on port 4000). Open <a href="https://engine.apollographql.com" target="_blank" rel="noopener">https://engine.apollographql.com</a> in browser, create a bucket named <code>magic-mooc</code>， Then run :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apollo service:push --graph=magic-mooc --key=user:gh.guoguolong:vKOUWxxp71eyns94RnorPg --endpoint=http://localhost:4000</span><br></pre></td></tr></table></figure>
-<p>it’ll publish schema to engine.apollographql.com. Let your other team members check it.</p>
-<p>You can also move the command arguments into the file .env and apollo.config.js, then simply use <code>apollo service:push</code> to publish it.</p>
-<p><strong># apollo.config.js</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    service: &#123;</span><br><span class="line">        name: &apos;magic-mooc&apos;,</span><br><span class="line">        endpoint: &#123;</span><br><span class="line">            url: &apos;http://localhost:4000/graphql&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong># .env</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APOLLO_KEY=user:gh.guoguolong:vKOUWxxp71eyns94RnorPg</span><br></pre></td></tr></table></figure></p>
-<p>Try <code>aplollo service:push</code> again.</p>
-<h2 id="Generate-TypeScript-definition-file：client-codegen"><a href="#Generate-TypeScript-definition-file：client-codegen" class="headerlink" title="Generate TypeScript definition file：client:codegen"></a>Generate TypeScript definition file：client:codegen</h2><p>We often develop ReactJS with TypeScript for type check. <code>apollo client:codegen</code> can check all the source code under src folder and it’s sub-folder. If find any gql definition, it’ll generate TypeScript interface into the <strong>generated</strong> folder for subsequent use.</p>
-<p>Unfortunately, I only succeed it by the file way(schema.gql). below is the sample I made:</p>
-<h3 id="Step-1-Create-apollo-config-js"><a href="#Step-1-Create-apollo-config-js" class="headerlink" title="Step 1. Create apollo.config.js"></a>Step 1. Create apollo.config.js</h3><p>Move to project root folder(You should have src sub-folder and some of the gql definitions), create apollo.config.js like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    client: &#123;</span><br><span class="line">        service: &#123;</span><br><span class="line">            localSchemaFile: &quot;./schema.gql&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Step-2-Download-schema-gql"><a href="#Step-2-Download-schema-gql" class="headerlink" title="Step 2. Download schema.gql"></a>Step 2. Download schema.gql</h3><p>Open Graph Endpoint in browser: <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>, easily find the gql definitions then download it as schema.gql</p>
-<h3 id="Step-3-Generate-TypeScript-Interface"><a href="#Step-3-Generate-TypeScript-Interface" class="headerlink" title="Step 3. Generate TypeScript Interface"></a>Step 3. Generate TypeScript Interface</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apollo client:codegen --target typescript --watch</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Reference：<a href="https://www.apollographql.com/docs/devtools/apollo-config" target="_blank" rel="noopener">Configuring Apollo projects</a></p>
-</blockquote>
-
           
         
       
