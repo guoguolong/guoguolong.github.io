@@ -1,9 +1,10 @@
 ---
-title: About Me
+title: Allen Guo
 ---
 
 ![](/images/logo.png)
 
 <center>
-Allen Guo - A Full Stack Programemr from the 20th centry, based in Nanjing
+A full-stack programmer from the 20th century
+based in Nanjing.
 </center>
