@@ -341,6 +341,219 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/18/guide/command-d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/18/guide/command-d/" class="post-title-link" itemprop="url">程序员入行之素养(五)：一生万物、万物归一(命令行“删除”电脑资料)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-18 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-18T10:00:00+08:00">2019-01-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><h3 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a><strong>rm</strong>命令</h3><blockquote>
+<p><strong>rm</strong> 删除文件或目录</p>
+</blockquote>
+<p><strong>▷ A. 删除文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm /samples/culture/banyuan.txt</span><br></pre></td></tr></table></figure>
+<p><strong>▷ B. 验证删除成功与否</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /samples/culture/banyuan.txt</span><br></pre></td></tr></table></figure>
+<p>系统返回如下输出结果，表示rm操作成功：  </p>
+<blockquote>
+<p>cat: /samples/culture/banyuan.txt : No such file or directory</p>
+</blockquote>
+<p><strong>▷ C. 删除文件前确认</strong></p>
+<p>为谨慎起见，如果删除文件时想系统给出提示，用户确认后再决定删除与否，可以使用-i参数，运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -i /samples/langs/web.html</span><br></pre></td></tr></table></figure></p>
+<p>系统返回如下结果，输入Y或者N确认删除或不删除：</p>
+<blockquote>
+<p>remove /samples/langs/web.html</p>
+</blockquote>
+<h2 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h2><h3 id="rm命令-1"><a href="#rm命令-1" class="headerlink" title="rm命令"></a><strong>rm</strong>命令</h3><blockquote>
+<p><strong>rm</strong> 删除文件或目录。 删除目录也使用rm命令，只是后面的的参数不同（-d或-r等）。</p>
+</blockquote>
+<p><strong>▷ A. 删除目录</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -d /samples/web/orm</span><br></pre></td></tr></table></figure>
+<p>如果什么也没有返回，表明操作成功。</p>
+<p><strong>▷ B. 验证删除成功与否</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /samples/web/orm</span><br></pre></td></tr></table></figure>
+<p>系统返回如下输出结果，表示rm操作成功：</p>
+<blockquote>
+<p>ls: /samples/web/orm: No such file or directory</p>
+</blockquote>
+<p><strong>▷ C. 删除非空目录</strong></p>
+<p>如果删除的目录下存在子目录或文件，执行rm -d会给出错误提示，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm -d /samples/web/build</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">&gt;rm: /samples/web/build: Directory not empty</span><br><span class="line"></span><br><span class="line">自然的想法是倒过来依序删除目标目录下的文件和子目录，然后再重新执行目标目录的删除。有一种更简单的方法是：使用-r参数，将直接将把目标目录及其下的所有子目录和文件删除：</span><br></pre></td></tr></table></figure></p>
+<p>rm -r /samples/web/build<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">如果命令执行正确，将不显示任何输出结果。</span><br><span class="line"></span><br><span class="line">到这里，敏锐的读者可能已经想到：如果同时应用多个命令参数会有什么的结果？比如rm -ir ...，不妨自己行做个实验。</span><br><span class="line"></span><br><span class="line">注：有些版本Mac系统运行rm时，默认给出确认提示（即：默认启用了-i），所以如果想取消确认提示，可以使用-f提示，-f不但支持文件，也支持目录。</span><br><span class="line"></span><br><span class="line">**▷ D. 删除多个文件或目录**</span><br><span class="line"></span><br><span class="line">rm命令后面说明多个 文件或目录全路径即可，如：</span><br></pre></td></tr></table></figure></p>
+<p>rm -f /samples/web/framework/expressjs.pdf f /samples/web/framework/springio.pdf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">有个更简便的方法达到同样的目的，即使用正则表达式（Regular Expression），如：</span><br></pre></td></tr></table></figure></p>
+<p>rm -rf /samples/web/<em>.pdf<br><code>`</code><br>“</em>“ 是正则表达式的规则之一，表示任意字符，上面命令行的含义是：删除 <strong>/samples/web/</strong> 目录下名字满足”任意字符加上.pdf字符”的条目。举一反三，find命令也是支持正则表达式的。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/17/guide/command-c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2378,7 +2591,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

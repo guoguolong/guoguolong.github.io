@@ -341,6 +341,216 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/05/03/ds_store_denied/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Guoguolong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Allen Guo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/03/ds_store_denied/" class="post-title-link" itemprop="url">禁止.DS_store生成</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-03 10:11:09" itemprop="dateCreated datePublished" datetime="2019-05-03T10:11:09+08:00">2019-05-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-27 18:11:09" itemprop="dateModified" datetime="2020-04-27T18:11:09+08:00">2020-04-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>.DS_Store，英文全称 Desktop Services Store，是Mac OS中保存文件夹自定义属性的隐藏文件，目的在于存贮文件夹的自定义属性，例如文件图标位置、视图设置，或背景色等，相当于Windows下的 desktop.ini。.DS_Store 默认放在每个文件夹的下面，这给我们带来了诸多不便，例如：</p>
+<ul>
+<li>压缩包里每个文件夹都带有.DS_Store文件，在windows系统里面成了垃圾文件；</li>
+<li>git、svn之类的版本管理工具要额外的对这种文件进行忽略处理；</li>
+<li>如果是要发布到服务器的文件夹，可能会形成文件泄露漏洞。</li>
+</ul>
+<p>在 macOS High Sierra 之后，我们看到苹果对此做出了优化，即使你在finder中使用快捷键 Shift + Command (⌘) + . 来显示隐藏文件 ，finder也不再显示隐藏的.DS_Store文件，但是在终端中，我们还是可以用 ll命令看到它的身影，苹果这是要掩耳盗铃吗？<br>那我们有什么办法来禁止.DS_Store的生成呢？网上流传的禁止.DS_Store生成方法是使用命令：</p>
+<blockquote>
+<p>defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE</p>
+</blockquote>
+<p>但是这个命令只有在网络共享的时候有效，也就是在本地无效。比如拖动一下图标的位置或者标记一下就会自动生成了，不是我们所理想的禁止生成，所以还是需要针对本地进行处理。</p>
+<p><strong>是时候出动 Asepsis 这把瑞士军刀了！</strong></p>
+<p>一直以来，Asepsis 都是我在mac OS 上必装工具之一，它会阻止Finder将.DS_Store文件写入文件夹。 Asepsis的工作原理是拦截所有.DS_Store文件的创建或写入，并将它们重定向到 /usr/local/.dscage。 这样 Finder 如常工作，且不会有这种无用文件污染文件系统。<br>不幸的是，在 OS X 10.11 El Capitan 发布之后，Apple 启用了 <a href="https://en.wikipedia.org/wiki/System_Integrity_Protection" target="_blank" rel="noopener">System Integrity Protection (SIP)</a>，它会阻止 Asepsis 的安装和正常运行。Asepsis 的作者已经放弃了对它的后续支持，因为他不希望用户为了使用这个工具而禁用系统关键安全服务。</p>
+<p>那有什么办法呢？</p>
+<p><strong>事实上我们可以在保持SIP启用的情况安装 Asepsis ！</strong></p>
+<h2 id="1-安装-Asepsis"><a href="#1-安装-Asepsis" class="headerlink" title="1) 安装 Asepsis"></a>1) 安装 Asepsis</h2><p>首先，打开终端并运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.no-asepsis-os-restriction</span><br><span class="line">touch ~/.asepsis-suppress-update-errors</span><br></pre></td></tr></table></figure>
+<p>目的是绕过Asepsis的内置兼容性检查，因为它不能识别 El Capitan 之后的版本。</p>
+<p>现在 你可以从<a href="http://asepsis.binaryage.com/" target="_blank" rel="noopener">官网</a>安装最新版本的Asepsis（截至2016年2月为1.5.2）。 运行安装程序，它提示你重新启动，这时SIP会阻止工具的运行。</p>
+<h2 id="2-进入恢复模式并禁用-SIP"><a href="#2-进入恢复模式并禁用-SIP" class="headerlink" title="2) 进入恢复模式并禁用 SIP"></a>2) 进入恢复模式并禁用 SIP</h2><p>重启电脑，按住 Command (⌘) + R 键进入 恢复模式。</p>
+<p>看到 macOS 实用工具 屏幕后，转到屏幕顶部的 实用工具 下拉菜单，然后选择 终端 ，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csrutil disable; reboot</span><br></pre></td></tr></table></figure>
+<p>等待电脑重启。</p>
+<h2 id="3-安装-Asepsis"><a href="#3-安装-Asepsis" class="headerlink" title="3) 安装 Asepsis"></a>3) 安装 Asepsis</h2><p>返回非恢复模式后，打开终端并运行以下命令安装Asepsis</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asepsisctl install</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果发现警告 wrapper already existing，有可能之前已经安装过Asepsis，此时尝试运行 asepsisctl uninstall_wrapper 然后重新运行 asepsisctl install。</p>
+</blockquote>
+<h2 id="4-重新启用-SIP"><a href="#4-重新启用-SIP" class="headerlink" title="4) 重新启用 SIP"></a>4) 重新启用 SIP</h2><p>重启并按住 Command (⌘) + R 进入恢复模式，运行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ csrutil enable; reboot</span><br></pre></td></tr></table></figure>
+<h2 id="5-验证-Asepsis-是否工作"><a href="#5-验证-Asepsis-是否工作" class="headerlink" title="5) 验证 Asepsis 是否工作"></a>5) 验证 Asepsis 是否工作</h2><p>重启后运行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ asepsisctl diagnose</span><br></pre></td></tr></table></figure>
+<p>如果正常的话你会看到：Your Asepsis installation seems to be OK.</p>
+<blockquote>
+<p>赠送命令：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 删除系统所有.DS_Store文件  </span><br><span class="line">sudo find / -name &quot;.DS_Store&quot; -depth -exec rm **&#123;&#125;** \;  </span><br><span class="line"># 删除当前目录以及子目录的DS_Store文件  </span><br><span class="line">find . -name &quot;.DS_Store&quot; -delete</span><br></pre></td></tr></table></figure>
+<p>转自： <a href="https://www.jianshu.com/p/f83e85443c50" target="_blank" rel="noopener">https://www.jianshu.com/p/f83e85443c50</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/04/17/homebrew-mirror-installation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2737,219 +2947,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://guoguolong.tech/2019/01/18/guide/command-d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Guoguolong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Allen Guo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/18/guide/command-d/" class="post-title-link" itemprop="url">程序员入行之素养(五)：一生万物、万物归一(命令行“删除”电脑资料)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-18 10:00:00" itemprop="dateCreated datePublished" datetime="2019-01-18T10:00:00+08:00">2019-01-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-27 18:05:08" itemprop="dateModified" datetime="2020-04-27T18:05:08+08:00">2020-04-27</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">IT</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IT/预备课/" itemprop="url" rel="index"><span itemprop="name">预备课</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><h3 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a><strong>rm</strong>命令</h3><blockquote>
-<p><strong>rm</strong> 删除文件或目录</p>
-</blockquote>
-<p><strong>▷ A. 删除文件</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm /samples/culture/banyuan.txt</span><br></pre></td></tr></table></figure>
-<p><strong>▷ B. 验证删除成功与否</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /samples/culture/banyuan.txt</span><br></pre></td></tr></table></figure>
-<p>系统返回如下输出结果，表示rm操作成功：  </p>
-<blockquote>
-<p>cat: /samples/culture/banyuan.txt : No such file or directory</p>
-</blockquote>
-<p><strong>▷ C. 删除文件前确认</strong></p>
-<p>为谨慎起见，如果删除文件时想系统给出提示，用户确认后再决定删除与否，可以使用-i参数，运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -i /samples/langs/web.html</span><br></pre></td></tr></table></figure></p>
-<p>系统返回如下结果，输入Y或者N确认删除或不删除：</p>
-<blockquote>
-<p>remove /samples/langs/web.html</p>
-</blockquote>
-<h2 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h2><h3 id="rm命令-1"><a href="#rm命令-1" class="headerlink" title="rm命令"></a><strong>rm</strong>命令</h3><blockquote>
-<p><strong>rm</strong> 删除文件或目录。 删除目录也使用rm命令，只是后面的的参数不同（-d或-r等）。</p>
-</blockquote>
-<p><strong>▷ A. 删除目录</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -d /samples/web/orm</span><br></pre></td></tr></table></figure>
-<p>如果什么也没有返回，表明操作成功。</p>
-<p><strong>▷ B. 验证删除成功与否</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /samples/web/orm</span><br></pre></td></tr></table></figure>
-<p>系统返回如下输出结果，表示rm操作成功：</p>
-<blockquote>
-<p>ls: /samples/web/orm: No such file or directory</p>
-</blockquote>
-<p><strong>▷ C. 删除非空目录</strong></p>
-<p>如果删除的目录下存在子目录或文件，执行rm -d会给出错误提示，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm -d /samples/web/build</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">&gt;rm: /samples/web/build: Directory not empty</span><br><span class="line"></span><br><span class="line">自然的想法是倒过来依序删除目标目录下的文件和子目录，然后再重新执行目标目录的删除。有一种更简单的方法是：使用-r参数，将直接将把目标目录及其下的所有子目录和文件删除：</span><br></pre></td></tr></table></figure></p>
-<p>rm -r /samples/web/build<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">如果命令执行正确，将不显示任何输出结果。</span><br><span class="line"></span><br><span class="line">到这里，敏锐的读者可能已经想到：如果同时应用多个命令参数会有什么的结果？比如rm -ir ...，不妨自己行做个实验。</span><br><span class="line"></span><br><span class="line">注：有些版本Mac系统运行rm时，默认给出确认提示（即：默认启用了-i），所以如果想取消确认提示，可以使用-f提示，-f不但支持文件，也支持目录。</span><br><span class="line"></span><br><span class="line">**▷ D. 删除多个文件或目录**</span><br><span class="line"></span><br><span class="line">rm命令后面说明多个 文件或目录全路径即可，如：</span><br></pre></td></tr></table></figure></p>
-<p>rm -f /samples/web/framework/expressjs.pdf f /samples/web/framework/springio.pdf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">有个更简便的方法达到同样的目的，即使用正则表达式（Regular Expression），如：</span><br></pre></td></tr></table></figure></p>
-<p>rm -rf /samples/web/<em>.pdf<br><code>`</code><br>“</em>“ 是正则表达式的规则之一，表示任意字符，上面命令行的含义是：删除 <strong>/samples/web/</strong> 目录下名字满足”任意字符加上.pdf字符”的条目。举一反三，find命令也是支持正则表达式的。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2996,7 +2993,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
